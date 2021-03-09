@@ -18,6 +18,10 @@ app.use(
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
+// set up routers
+
+app.use("/tutorial", require("./routers/tutorialRouter"));
+
 // connect to mongodbAtlas
 mongoose.connect(
   process.env.MDB_CONNECT_STRING,
