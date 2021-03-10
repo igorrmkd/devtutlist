@@ -35,6 +35,40 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.put("/:id", async (req, res) => {
+  try {
+    const { img, title, description } = req.body;
+    const tutorialId = req.params.id;
+
+    if (!title && !description) {
+      return res.status(400).json({
+        errorMessage: "you must put Title and Description",
+      });
+    }
+
+    if (!tutorialId)
+      return res.status(400).json({
+        errorMessage: "Tutorial id not supplied. Please contact the developer",
+      });
+
+    const originalTutorial = await Tutorial.findById(tutorialId);
+    if (!originalTutorial)
+      return res.status(400).json({
+        errorMessage:
+          "No tutorial with this ID is found. Please contact the developer",
+      });
+
+    originalTutorial.img = img;
+    originalTutorial.title = title;
+    originalTutorial.description = description;
+
+    const savedTutorial = await originalTutorial.save();
+    res.json(savedTutorial);
+  } catch (err) {
+    res.status(500).send();
+  }
+});
+
 router.delete("/:id", async (req, res) => {
   try {
     const tutorialId = req.params.id; // identify the tutorial by id
