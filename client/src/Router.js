@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "./components/home/Home";
 import Navbar from "./components/misc/Navbar";
 
 function Router() {
@@ -7,7 +8,7 @@ function Router() {
       <Navbar />
       <Switch>
         <Route exact path="/">
-          Homepage
+          <Home />
         </Route>
         <Route path="/login">Login</Route>
         <Route path="/register">Register</Route>
