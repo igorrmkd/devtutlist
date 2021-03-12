@@ -5,6 +5,9 @@ import Tutorial from "./Tutorial";
 const Home = () => {
   const [tutorials, setTutorials] = useState([]);
   const [newTut, setNewTut] = useState(false);
+  const [imgLink, setImgLink] = useState("");
+  const [tutName, setTutName] = useState("");
+  const [description, setDescription] = useState("");
 
   useEffect(() => {
     // get the tuts
@@ -29,11 +32,25 @@ const Home = () => {
         <div>
           <form>
             <label htmlFor="image-link">Image</label>
-            <input id="image-link" type="text"></input>
+            <input
+              id="image-link"
+              type="text"
+              value={imgLink}
+              onChange={e => setImgLink(e.target.value)}
+            ></input>
             <label htmlFor="tutorial-name">Title</label>
-            <input id="tutorial-name" type="text"></input>
+            <input
+              id="tutorial-name"
+              type="text"
+              value={tutName}
+              onChange={e => setTutName(e.target.value)}
+            ></input>
             <label htmlFor="description">Description</label>
-            <textarea id="description" />
+            <textarea
+              id="description"
+              value={description}
+              onChange={e => setDescription(e.target.value)}
+            />
           </form>
         </div>
       )}
