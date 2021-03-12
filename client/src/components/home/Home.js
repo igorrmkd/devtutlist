@@ -34,6 +34,16 @@ const Home = () => {
       description: description ? description : undefined,
     };
     await axios.post("http://localhost:5000/tutorial/", tutorialData);
+
+    closeTutForm();
+    getTutorials();
+  }
+
+  function closeTutForm() {
+    setNewTut(false);
+    setImgLink("");
+    setTutName("");
+    setDescription("");
   }
 
   return (
@@ -63,6 +73,9 @@ const Home = () => {
               onChange={e => setDescription(e.target.value)}
             />
             <button type="submit">Save changes</button>
+            <button type="button" onClick={closeTutForm}>
+              Cancel
+            </button>
           </form>
         </div>
       )}
