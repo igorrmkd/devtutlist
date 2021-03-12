@@ -4,6 +4,7 @@ import Tutorial from "./Tutorial";
 
 const Home = () => {
   const [tutorials, setTutorials] = useState([]);
+  const [newTut, setNewTut] = useState(false);
 
   useEffect(() => {
     // get the tuts
@@ -21,7 +22,12 @@ const Home = () => {
     });
   }
 
-  return <div>{renderTutorials()}</div>;
+  return (
+    <div>
+      {!newTut && <button onClick={() => setNewTut(true)}>Add Tutorial</button>}
+      {renderTutorials()}
+    </div>
+  );
 };
 
 export default Home;
