@@ -25,6 +25,18 @@ const Home = () => {
   return (
     <div>
       {!newTut && <button onClick={() => setNewTut(true)}>Add Tutorial</button>}
+      {newTut && (
+        <div>
+          <form>
+            <label htmlFor="image-link">Image</label>
+            <input id="image-link" type="text"></input>
+            <label htmlFor="tutorial-name">Title</label>
+            <input id="tutorial-name" type="text"></input>
+            <label htmlFor="description">Description</label>
+            <textarea id="description" />
+          </form>
+        </div>
+      )}
       {renderTutorials()}
     </div>
   );
