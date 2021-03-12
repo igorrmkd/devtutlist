@@ -20,7 +20,12 @@ const Home = () => {
   }
 
   function renderTutorials() {
-    return tutorials.map((tutorial, i) => {
+    let sortedTutorials = [...tutorials];
+    sortedTutorials = sortedTutorials.sort((a, b) => {
+      return new Date(b.createdAt) - new Date(a.createdAt);
+    });
+
+    return sortedTutorials.map((tutorial, i) => {
       return <Tutorial key={i} tutorial={tutorial} />;
     });
   }
