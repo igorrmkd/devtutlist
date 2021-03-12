@@ -25,12 +25,23 @@ const Home = () => {
     });
   }
 
+  async function saveTutorial(e) {
+    e.preventDefault();
+
+    const tutorialData = {
+      img: imgLink ? imgLink : undefined,
+      title: tutName ? tutName : undefined,
+      description: description ? description : undefined,
+    };
+    await axios.post("http://localhost:5000/tutorial/", tutorialData);
+  }
+
   return (
     <div>
       {!newTut && <button onClick={() => setNewTut(true)}>Add Tutorial</button>}
       {newTut && (
         <div>
-          <form>
+          <form onSubmit={saveTutorial}>
             <label htmlFor="image-link">Image</label>
             <input
               id="image-link"
@@ -51,6 +62,7 @@ const Home = () => {
               value={description}
               onChange={e => setDescription(e.target.value)}
             />
+            <button type="submit">Save changes</button>
           </form>
         </div>
       )}

@@ -5,7 +5,7 @@ const Tutorial = ({ tutorial }) => {
   const defaultimg = <img src={defaultTutorial} alt="tutorialImage" />;
   return (
     <div>
-      {defaultimg}
+      {tutorial.img ? tutorial.img : defaultimg}
       {tutorial.title && <h2>{tutorial.title}</h2>}
       {tutorial.description && <h2>{tutorial.description}</h2>}
     </div>
