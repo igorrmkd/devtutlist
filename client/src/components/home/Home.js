@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import Axios from "axios";
 import Tutorial from "./Tutorial";
 import TutorialEditor from "./TutorialEditor";
 
@@ -10,10 +10,13 @@ const Home = () => {
   useEffect(() => {
     // get the tuts
     getTutorials();
+    // return function cleanup() {
+    //   //
+    // };
   }, []);
 
   async function getTutorials() {
-    const tutorialsRes = await axios.get("http://localhost:5000/tutorial/");
+    const tutorialsRes = await Axios.get("http://localhost:5000/tutorial/");
     setTutorials(tutorialsRes.data);
   }
 
@@ -24,7 +27,9 @@ const Home = () => {
     });
 
     return sortedTutorials.map((tutorial, i) => {
-      return <Tutorial key={i} tutorial={tutorial} />;
+      return (
+        <Tutorial key={i} tutorial={tutorial} getTutorials={getTutorials} />
+      );
     });
   }
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import axios from "axios";
+import Axios from "axios";
 
-function TutorialEditor(props) {
+function TutorialEditor({ getTutorials, setNewTut }) {
   const [imgLink, setImgLink] = useState("");
   const [tutName, setTutName] = useState("");
   const [description, setDescription] = useState("");
@@ -14,14 +14,14 @@ function TutorialEditor(props) {
       title: tutName ? tutName : undefined,
       description: description ? description : undefined,
     };
-    await axios.post("http://localhost:5000/tutorial/", tutorialData);
+    await Axios.post("http://localhost:5000/tutorial/", tutorialData);
 
     closeTutForm();
-    props.getTutorials();
+    getTutorials();
   }
 
   function closeTutForm() {
-    props.setNewTut(false);
+    setNewTut(false);
     setImgLink("");
     setTutName("");
     setDescription("");
