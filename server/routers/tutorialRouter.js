@@ -88,7 +88,7 @@ router.delete("/:id", async (req, res) => {
       });
 
     await existingTutorial.delete(); // delete the tutorial
-    // res.json(existingTutorial); //if you want to show the deleted tutorial
+    res.json(existingTutorial); // responce back the deleted tutorial info
   } catch (err) {
     res.status(500).send();
   }

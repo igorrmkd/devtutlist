@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Axios from "axios";
 
-function TutorialEditor({ getTutorials, setNewTut }) {
+function TutorialEditor({ getTutorials, setNewTut, newTut }) {
   const [imgLink, setImgLink] = useState("");
   const [tutName, setTutName] = useState("");
   const [description, setDescription] = useState("");
@@ -21,7 +21,9 @@ function TutorialEditor({ getTutorials, setNewTut }) {
   }
 
   function closeTutForm() {
-    setNewTut(false);
+    if (newTut) {
+      return setNewTut(false);
+    }
     setImgLink("");
     setTutName("");
     setDescription("");

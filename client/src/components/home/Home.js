@@ -10,9 +10,6 @@ const Home = () => {
   useEffect(() => {
     // get the tuts
     getTutorials();
-    // return function cleanup() {
-    //   //
-    // };
   }, []);
 
   async function getTutorials() {
@@ -25,7 +22,6 @@ const Home = () => {
     sortedTutorials = sortedTutorials.sort((a, b) => {
       return new Date(b.createdAt) - new Date(a.createdAt);
     });
-
     return sortedTutorials.map((tutorial, i) => {
       return (
         <Tutorial key={i} tutorial={tutorial} getTutorials={getTutorials} />
@@ -37,7 +33,11 @@ const Home = () => {
     <div>
       {!newTut && <button onClick={() => setNewTut(true)}>Add Tutorial</button>}
       {newTut && (
-        <TutorialEditor setNewTut={setNewTut} getTutorials={getTutorials} />
+        <TutorialEditor
+          setNewTut={setNewTut}
+          getTutorials={getTutorials}
+          newTut={newTut}
+        />
       )}
       {renderTutorials()}
     </div>
