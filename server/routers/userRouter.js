@@ -51,7 +51,7 @@ router.post("/", async (req, res) => {
     const token = jwt.sign({ id: savedUser._id }, process.env.JWT_SECRET);
 
     //set up a cookie in the request, and send the cookie(readable only httpOnly)
-    res.cookie("tokenname", token, { httpOnly: true }).send();
+    res.cookie("token", token, { httpOnly: true }).send();
     //
   } catch (err) {
     res.status(500).send();
