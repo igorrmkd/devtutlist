@@ -3,7 +3,7 @@ import Axios from "axios";
 
 import defaultTutorial from "../../img/defaultTutorial.jpg";
 
-function Tutorial({ tutorial, getTutorials }) {
+function Tutorial({ tutorial, getTutorials, editTutorial }) {
   const defaultimg = <img src={defaultTutorial} alt="tutorialImage" />;
   let newImgUrl = tutorial.img;
   let newImg = <img src={newImgUrl} alt="tutorial" />;
@@ -18,6 +18,7 @@ function Tutorial({ tutorial, getTutorials }) {
       {tutorial.img ? newImg : defaultimg}
       {tutorial.title && <h2>{tutorial.title}</h2>}
       {tutorial.description && <h2>{tutorial.description}</h2>}
+      <button onClick={() => editTutorial(tutorial)}>Edit</button>
       <button onClick={deleteTutorial}>Delete</button>
     </div>
   );

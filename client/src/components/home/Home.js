@@ -6,6 +6,7 @@ import TutorialEditor from "./TutorialEditor";
 const Home = () => {
   const [tutorials, setTutorials] = useState([]);
   const [newTut, setNewTut] = useState(false);
+  const [editTutorialData, setEditTutorialData] = useState(null);
 
   useEffect(() => {
     // get the tuts
@@ -17,6 +18,11 @@ const Home = () => {
     setTutorials(tutorialsRes.data);
   }
 
+  function editTutorial(tutorialData) {
+    setEditTutorialData(tutorialData);
+    setNewTut(true);
+  }
+
   function renderTutorials() {
     let sortedTutorials = [...tutorials];
     sortedTutorials = sortedTutorials.sort((a, b) => {
@@ -24,7 +30,12 @@ const Home = () => {
     });
     return sortedTutorials.map((tutorial, i) => {
       return (
-        <Tutorial key={i} tutorial={tutorial} getTutorials={getTutorials} />
+        <Tutorial
+          key={i}
+          tutorial={tutorial}
+          getTutorials={getTutorials}
+          editTutorial={editTutorial}
+        />
       );
     });
   }
@@ -37,6 +48,7 @@ const Home = () => {
           setNewTut={setNewTut}
           getTutorials={getTutorials}
           newTut={newTut}
+          editTutorialData={editTutorialData}
         />
       )}
       {renderTutorials()}
