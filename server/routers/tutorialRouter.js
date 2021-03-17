@@ -1,9 +1,12 @@
 const { Router } = require("express");
 const Tutorial = require("../models/tutorialModel");
 const router = Router();
+const auth = require("../middleware/auth");
 
-router.get("/", async (req, res) => {
+router.get("/", auth, async (req, res) => {
   try {
+    console.log(req.user); // user id
+    //
     const tutorials = await Tutorial.find();
     res.json(tutorials);
   } catch (err) {
