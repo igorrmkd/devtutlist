@@ -21,6 +21,7 @@ app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 // set up routers
 
 app.use("/tutorial", require("./routers/tutorialRouter"));
+app.use("/auth", require("./routers/userRouter"));
 
 // connect to mongodbAtlas
 mongoose.connect(
