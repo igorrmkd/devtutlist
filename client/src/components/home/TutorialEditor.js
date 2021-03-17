@@ -1,10 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Axios from "axios";
 
-function TutorialEditor({ getTutorials, setNewTut, newTut }) {
+function TutorialEditor({ getTutorials, setNewTut, newTut, editTutorialData }) {
   const [imgLink, setImgLink] = useState("");
   const [tutName, setTutName] = useState("");
   const [description, setDescription] = useState("");
+
+  useEffect(() => {
+    if (editTutorialData) {
+      setImgLink(editTutorialData.img ? editTutorialData.img : "");
+      setTutName(editTutorialData.title ? editTutorialData.title : "");
+      setDescription(
+        editTutorialData.description ? editTutorialData.description : ""
+      );
+    }
+  }, [editTutorialData]);
 
   async function saveTutorial(e) {
     e.preventDefault();
@@ -14,7 +24,16 @@ function TutorialEditor({ getTutorials, setNewTut, newTut }) {
       title: tutName ? tutName : undefined,
       description: description ? description : undefined,
     };
-    await Axios.post("http://localhost:5000/tutorial/", tutorialData);
+
+    if (!editTutorialData)
+      // if you are not getting editData (not editing..) post as a new tut
+      await Axios.post("http://localhost:5000/tutorial/", tutorialData);
+    // if you are reciving editdata (you are editing), just update the data
+    else
+      await Axios.put(
+        `http://localhost:5000/tutorial/${editTutorialData._id}`,
+        tutorialData
+      );
 
     closeTutForm();
     getTutorials();
