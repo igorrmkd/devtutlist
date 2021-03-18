@@ -37,7 +37,7 @@ router.post("/", auth, async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", auth, async (req, res) => {
   try {
     const { img, title, description } = req.body;
     const tutorialId = req.params.id;
@@ -60,6 +60,10 @@ router.put("/:id", async (req, res) => {
           "No tutorial with this ID is found. Please contact the developer",
       });
 
+    // cannot edit the tut. if its posted by other user.. send status 401
+    if (originalTutorial.user.toString() !== req.user)
+      return res.status(401).json({ errorMessage: "Unauthorized." });
+
     originalTutorial.img = img;
     originalTutorial.title = title;
     originalTutorial.description = description;
@@ -71,7 +75,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", auth, async (req, res) => {
   try {
     const tutorialId = req.params.id; // identify the tutorial by id
 
@@ -89,7 +93,12 @@ router.delete("/:id", async (req, res) => {
           "No tutorial with this ID is found. Please contact the developer",
       });
 
+    // cannot delete the tut. if its posted by other user.. send status 401
+    if (existingTutorial.user.toString() !== req.user)
+      return res.status(401).json({ errorMessage: "Unauthorized." });
+
     await existingTutorial.delete(); // delete the tutorial
+    //
     res.json(existingTutorial); // responce back the deleted tutorial info
   } catch (err) {
     res.status(500).send();
