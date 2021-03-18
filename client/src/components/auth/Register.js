@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -6,10 +7,22 @@ const Register = () => {
   const [formPassword, setFormPassword] = useState("");
   const [formPassVerify, setFormPassVerify] = useState("");
 
+  async function register(e) {
+    e.preventDefault();
+
+    const registerData = {
+      email: formEmail,
+      password: formPassword,
+      passwordVerify: formPassVerify,
+    };
+
+    await axios.post("http://localhost:5000/auth/", registerData);
+  }
+
   return (
     <div>
       <h2>Register a new account</h2>
-      <form>
+      <form onSubmit={register}>
         <label htmlFor="form-email">Email</label>
         <input
           id="form-email"
