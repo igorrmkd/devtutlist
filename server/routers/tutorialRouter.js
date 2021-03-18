@@ -5,16 +5,14 @@ const auth = require("../middleware/auth");
 
 router.get("/", auth, async (req, res) => {
   try {
-    console.log(req.user); // user id
-    //
-    const tutorials = await Tutorial.find();
+    const tutorials = await Tutorial.find({ user: req.user });
     res.json(tutorials);
   } catch (err) {
     res.status(500).send();
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
   try {
     const { img, title, description } = req.body;
     // validation
@@ -28,6 +26,7 @@ router.post("/", async (req, res) => {
       img,
       title,
       description,
+      user: req.user,
     });
 
     const savedTutorial = await newTutorial.save();
