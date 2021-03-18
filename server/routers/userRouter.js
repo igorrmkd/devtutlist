@@ -58,4 +58,43 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    // basic validation
+    if (!email || !password)
+      return res.status(401).json({
+        errorMessage: "Please enter all required fields",
+      });
+
+    // get the user account
+    const existingUser = await User.findOne({ email });
+    // if there is no such user in the database..
+    if (!existingUser)
+      return res.status(401).json({
+        errorMessage: "Wrong email or password",
+      });
+
+    // check if the password entered matches the stored password
+    const correctPassword = await bcrypt.compare(
+      password,
+      existingUser.passwordHash
+    );
+
+    if (!correctPassword)
+      return res.status(401).json({
+        errorMessage: "Wrong email or password",
+      });
+
+    // create jwt token
+    const token = jwt.sign({ id: existingUser._id }, process.env.JWT_SECRET);
+
+    //set up a cookie in the request, and send the cookie(readable only httpOnly)
+    res.cookie("token", token, { httpOnly: true }).send();
+    //
+  } catch (err) {
+    res.status(500).send();
+  }
+});
+
 module.exports = router;
