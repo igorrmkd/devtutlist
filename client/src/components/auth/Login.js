@@ -1,10 +1,13 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import userContext from "../../context/UserContext";
 import { Link, useHistory } from "react-router-dom";
 
 const Login = () => {
   const [formEmail, setFormEmail] = useState("");
   const [formPassword, setFormPassword] = useState("");
+
+  const { getUser } = useContext(userContext);
 
   const history = useHistory();
 
@@ -17,6 +20,8 @@ const Login = () => {
     };
 
     await axios.post("http://localhost:5000/auth/login", loginData);
+
+    await getUser();
     history.push("/");
   }
 

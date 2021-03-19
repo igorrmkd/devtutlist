@@ -9,7 +9,7 @@ const Home = () => {
   const [newTut, setNewTut] = useState(false);
   const [editTutorialData, setEditTutorialData] = useState(null);
 
-  const user = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     // get the tuts
