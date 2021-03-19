@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Login = () => {
   const [formEmail, setFormEmail] = useState("");
   const [formPassword, setFormPassword] = useState("");
+
+  const history = useHistory();
 
   async function login(e) {
     e.preventDefault();
@@ -15,6 +17,7 @@ const Login = () => {
     };
 
     await axios.post("http://localhost:5000/auth/login", loginData);
+    history.push("/");
   }
 
   return (
