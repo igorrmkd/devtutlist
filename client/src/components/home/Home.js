@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Axios from "axios";
 import Tutorial from "./Tutorial";
 import TutorialEditor from "./TutorialEditor";
+import UserContext from "../../context/UserContext";
 
 const Home = () => {
   const [tutorials, setTutorials] = useState([]);
   const [newTut, setNewTut] = useState(false);
   const [editTutorialData, setEditTutorialData] = useState(null);
+
+  const user = useContext(UserContext);
 
   useEffect(() => {
     // get the tuts
@@ -42,7 +45,9 @@ const Home = () => {
 
   return (
     <div>
-      {!newTut && <button onClick={() => setNewTut(true)}>Add Tutorial</button>}
+      {!newTut && user && (
+        <button onClick={() => setNewTut(true)}>Add Tutorial</button>
+      )}
       {newTut && (
         <TutorialEditor
           setNewTut={setNewTut}

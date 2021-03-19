@@ -21,4 +21,5 @@ function UserContextProvider(props) {
   );
 }
 
+export default UserContext;
 export { UserContextProvider };
