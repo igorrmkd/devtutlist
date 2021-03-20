@@ -65,7 +65,7 @@ const Home = () => {
         <div>
           <h2>Welcome to WebDev tutorials</h2>
           <p>
-            <Link to="/register">Register here</Link>
+            <Link to="/register">Register here </Link>
             <span>to put your own tutorials on the list</span>
           </p>
         </div>
