@@ -29,6 +29,9 @@ const Home = () => {
     setEditTutorialData(tutorialData);
     setNewTut(true);
   }
+  function clearEditTutorialForm() {
+    setEditTutorialData(null);
+  }
 
   function renderTutorials() {
     let sortedTutorials = [...tutorials];
@@ -58,6 +61,7 @@ const Home = () => {
           getTutorials={getTutorials}
           newTut={newTut}
           editTutorialData={editTutorialData}
+          clearEditTutorialForm={clearEditTutorialForm}
         />
       )}
       {tutorials.length > 0 && renderTutorials()}

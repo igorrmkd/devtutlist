@@ -2,7 +2,13 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import ErrorMessage from "../misc/ErrorMessage";
 
-function TutorialEditor({ getTutorials, setNewTut, newTut, editTutorialData }) {
+function TutorialEditor({
+  getTutorials,
+  setNewTut,
+  newTut,
+  editTutorialData,
+  clearEditTutorialForm,
+}) {
   const [imgLink, setImgLink] = useState("");
   const [tutName, setTutName] = useState("");
   const [description, setDescription] = useState("");
@@ -45,6 +51,7 @@ function TutorialEditor({ getTutorials, setNewTut, newTut, editTutorialData }) {
       }
       return;
     }
+    clearEditTutorialForm();
     closeTutForm();
     getTutorials();
   }
@@ -88,7 +95,13 @@ function TutorialEditor({ getTutorials, setNewTut, newTut, editTutorialData }) {
           onChange={e => setDescription(e.target.value)}
         />
         <button type="submit">Save changes</button>
-        <button type="button" onClick={closeTutForm}>
+        <button
+          type="button"
+          onClick={() => {
+            closeTutForm();
+            clearEditTutorialForm();
+          }}
+        >
           Cancel
         </button>
       </form>
