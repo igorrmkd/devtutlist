@@ -16,13 +16,13 @@ const Navbar = () => {
       <Link to="/">
         <h1>WebDev tutorials</h1>
       </Link>
-      {!user ? (
+      {user === null ? (
         <>
           <Link to="/login">Log in</Link>
           <Link to="/register">Register</Link>
         </>
       ) : (
-        <button onClick={logout}>Log out</button>
+        user && <button onClick={logout}>Log out</button>
       )}
     </div>
   );

@@ -3,6 +3,7 @@ import Axios from "axios";
 import Tutorial from "./Tutorial";
 import TutorialEditor from "./TutorialEditor";
 import UserContext from "../../context/UserContext";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [tutorials, setTutorials] = useState([]);
@@ -12,9 +13,12 @@ const Home = () => {
   const { user } = useContext(UserContext);
 
   useEffect(() => {
-    // get the tuts
-    getTutorials();
-  }, []);
+    if (!user) {
+      // if no user is loged in..
+      setTutorials([]); // clear the tutorials
+      return; // return and dont get any tutorials
+    } else getTutorials(); // get the tuts
+  }, [user]);
 
   async function getTutorials() {
     const tutorialsRes = await Axios.get("http://localhost:5000/tutorial/");
@@ -56,7 +60,16 @@ const Home = () => {
           editTutorialData={editTutorialData}
         />
       )}
-      {renderTutorials()}
+      {tutorials.length > 0 && renderTutorials()}
+      {user === null && (
+        <div>
+          <h2>Welcome to WebDev tutorials</h2>
+          <p>
+            <Link to="/register">Register here</Link>
+            <span>to put your own tutorials on the list</span>
+          </p>
+        </div>
+      )}
     </div>
   );
 };
