@@ -2,10 +2,12 @@ import axios from "axios";
 import React, { useState, useContext } from "react";
 import userContext from "../../context/UserContext";
 import { Link, useHistory } from "react-router-dom";
+import ErrorMessage from "../misc/ErrorMessage";
 
 const Login = () => {
   const [formEmail, setFormEmail] = useState("");
   const [formPassword, setFormPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const { getUser } = useContext(userContext);
 
@@ -19,7 +21,16 @@ const Login = () => {
       password: formPassword,
     };
 
-    await axios.post("http://localhost:5000/auth/login", loginData);
+    try {
+      await axios.post("http://localhost:5000/auth/login", loginData);
+    } catch (err) {
+      if (err.response) {
+        if (err.response.data.errorMessage) {
+          setErrorMessage(err.response.data.errorMessage);
+        }
+      }
+      return;
+    }
 
     await getUser();
     history.push("/");
@@ -28,6 +39,12 @@ const Login = () => {
   return (
     <div>
       <h2>Log in</h2>
+      {errorMessage && (
+        <ErrorMessage
+          message={errorMessage}
+          clear={() => setErrorMessage(null)}
+        />
+      )}
       <form onSubmit={login}>
         <label htmlFor="form-email">Email</label>
         <input
