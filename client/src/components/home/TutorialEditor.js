@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
+import ErrorMessage from "../misc/ErrorMessage";
 
 function TutorialEditor({ getTutorials, setNewTut, newTut, editTutorialData }) {
   const [imgLink, setImgLink] = useState("");
   const [tutName, setTutName] = useState("");
   const [description, setDescription] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     if (editTutorialData) {
@@ -25,16 +27,24 @@ function TutorialEditor({ getTutorials, setNewTut, newTut, editTutorialData }) {
       description: description ? description : undefined,
     };
 
-    if (!editTutorialData)
-      // if you are not getting editData (not editing..) post as a new tut
-      await Axios.post("http://localhost:5000/tutorial/", tutorialData);
-    // if you are reciving editdata (you are editing), just update the data
-    else
-      await Axios.put(
-        `http://localhost:5000/tutorial/${editTutorialData._id}`,
-        tutorialData
-      );
-
+    try {
+      if (!editTutorialData)
+        // if you are not getting editData (not editing..) post as a new tut
+        await Axios.post("http://localhost:5000/tutorial/", tutorialData);
+      // if you are reciving editdata (you are editing), just update the data
+      else
+        await Axios.put(
+          `http://localhost:5000/tutorial/${editTutorialData._id}`,
+          tutorialData
+        );
+    } catch (err) {
+      if (err.response) {
+        if (err.response.data.errorMessage) {
+          setErrorMessage(err.response.data.errorMessage);
+        }
+      }
+      return;
+    }
     closeTutForm();
     getTutorials();
   }
@@ -50,6 +60,12 @@ function TutorialEditor({ getTutorials, setNewTut, newTut, editTutorialData }) {
 
   return (
     <div>
+      {errorMessage && (
+        <ErrorMessage
+          message={errorMessage}
+          clear={() => setErrorMessage(null)}
+        />
+      )}
       <form onSubmit={saveTutorial}>
         <label htmlFor="image-link">Image</label>
         <input
