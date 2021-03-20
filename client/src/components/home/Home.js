@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import Axios from "axios";
 import Tutorial from "./Tutorial";
 import TutorialEditor from "./TutorialEditor";
+import DefaultTutorials from "./DefaultTutorials";
 import UserContext from "../../context/UserContext";
 import { Link } from "react-router-dom";
 
@@ -72,6 +73,30 @@ const Home = () => {
             <Link to="/register">Register here </Link>
             <span>to put your own tutorials on the list</span>
           </p>
+          <DefaultTutorials
+            title="Your First Favorite Tutorial"
+            description="Tutorial description"
+          />
+          <DefaultTutorials
+            title="Your Second Favorite Tutorial"
+            description="Tutorial description"
+          />
+          <DefaultTutorials
+            title="Your Third Favorite Tutorial"
+            description="Tutorial description"
+          />
+          <DefaultTutorials
+            title="Your Forth Favorite Tutorial"
+            description="Tutorial description"
+          />
+          <DefaultTutorials
+            title="Your Fifth Favorite Tutorial"
+            description="Tutorial description"
+          />
+          <DefaultTutorials
+            title="Your Sixth Favorite Tutorial"
+            description="Tutorial description"
+          />
         </div>
       )}
     </div>

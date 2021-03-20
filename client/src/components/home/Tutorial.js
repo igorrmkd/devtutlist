@@ -1,6 +1,5 @@
 import React from "react";
 import Axios from "axios";
-
 import defaultTutorial from "../../img/defaultTutorial.jpg";
 
 function Tutorial({ tutorial, getTutorials, editTutorial }) {
