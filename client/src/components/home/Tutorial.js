@@ -9,8 +9,10 @@ function Tutorial({ tutorial, getTutorials, editTutorial }) {
   let newImg = <img src={newImgUrl} alt="tutorial" />;
 
   async function deleteTutorial() {
-    await Axios.delete(`http://localhost:5000/tutorial/${tutorial._id}`);
-    getTutorials();
+    if (window.confirm("Do you want to delete the content form the list?")) {
+      await Axios.delete(`http://localhost:5000/tutorial/${tutorial._id}`);
+      getTutorials();
+    }
   }
 
   return (
