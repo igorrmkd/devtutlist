@@ -112,4 +112,13 @@ router.get("/loggedIn", (req, res) => {
   }
 });
 
+router.get("/logout", (req, res) => {
+  try {
+    res.clearCookie("token").send();
+    //
+  } catch (err) {
+    return res.json(null);
+  }
+});
+
 module.exports = router;
