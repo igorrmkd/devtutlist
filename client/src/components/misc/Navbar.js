@@ -10,11 +10,13 @@ const Navbar = () => {
       <Link to="/">
         <h1>WebDev tutorials</h1>
       </Link>
-      {!user && (
+      {!user ? (
         <>
           <Link to="/login">Log in</Link>
           <Link to="/register">Register</Link>
         </>
+      ) : (
+        <button>Log out</button>
       )}
     </div>
   );
