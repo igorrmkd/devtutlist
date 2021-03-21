@@ -53,6 +53,23 @@ const Home = () => {
 
   return (
     <div>
+      {!user && (
+        <main>
+          <h2>Welcome to WebDev tutorials</h2>
+          <p> Start creating your own list of tutorials</p>
+          <p>
+            {" "}
+            after you{" "}
+            <span>
+              <Link to="/register">
+                <button>Create</button>
+              </Link>
+            </span>{" "}
+            an account
+          </p>
+        </main>
+      )}
+
       {!newTut && user && (
         <button onClick={() => setNewTut(true)}>Add Tutorial</button>
       )}
@@ -68,11 +85,11 @@ const Home = () => {
       {tutorials.length > 0 && renderTutorials()}
       {user === null && (
         <div>
-          <h2>Welcome to WebDev tutorials</h2>
+          {/* <h2>Welcome to WebDev tutorials</h2>
           <p>
             <Link to="/register">Register here </Link>
             <span>to put your own tutorials on the list</span>
-          </p>
+          </p> */}
           <DefaultTutorials
             title="Your First Favorite Tutorial"
             description="Tutorial description"
