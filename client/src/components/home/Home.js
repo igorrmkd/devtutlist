@@ -74,7 +74,7 @@ const Home = () => {
       {!newTut && user && (
         <container className="addtut">
           <button className="add" onClick={() => setNewTut(true)}>
-            Add Tutorial
+            Add your favorite tutorials
           </button>
         </container>
       )}

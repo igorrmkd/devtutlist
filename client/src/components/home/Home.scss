@@ -32,6 +32,6 @@ body {
 
   button.add {
     transform: translateX(50vw) translateX(-55%);
-    @include addBtn($margin: 0, $color: var(--add-button));
+    @include addBtn($margin: 1rem, $color: var(--add-button));
   }
 }

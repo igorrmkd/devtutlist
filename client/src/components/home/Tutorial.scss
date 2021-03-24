@@ -2,9 +2,4 @@
 
 .mytutorial {
   @include tutorials();
-  border-radius: 5px;
-  // box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;
-  box-shadow: 1px 1px 10px 1px var(--shadow-tut); // normal
-  // box-shadow: 1px 1px 10px 5px var(--shadow-tut); // hover
-  // box-shadow: 1px 1px 3px 5px var(--shadow-tut-dark); // clicked
 }

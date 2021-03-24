@@ -7,10 +7,16 @@
   }
   text-align: center;
   margin: 1rem 1rem 1rem 1rem;
+  //
+  border-radius: 5px;
+  // box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;
+  box-shadow: 1px 1px 10px 1px var(--shadow-tut); // normal
+  // box-shadow: 1px 1px 10px 5px var(--shadow-tut); // hover
+  // box-shadow: 1px 1px 3px 5px var(--shadow-tut-dark); // clicked
 }
 
 @mixin tutsort {
-  padding: 2rem;
+  padding: 1rem 2rem 1rem 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -30,7 +36,12 @@
 @mixin addBtn($margin, $color) {
   width: fit-content;
   background-color: $color;
+  margin-top: $margin;
   border: none;
+  font-size: 1.1rem;
   border-radius: 5px;
   padding: 0.4rem 0.8rem;
+  box-shadow: 1px 1px 10px 1px var(--shadow-tut); // normal
+  // box-shadow: 1px 1px 10px 5px var(--shadow-tut); // hover
+  // box-shadow: 1px 1px 3px 5px var(--shadow-tut-dark); // clicked
 }
