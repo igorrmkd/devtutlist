@@ -7,3 +7,12 @@
   }
   text-align: center;
 }
+
+@mixin tutsort {
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: teal;
+  justify-content: space-evenly;
+  flex: 1 0 21%;
+}

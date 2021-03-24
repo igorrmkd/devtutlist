@@ -83,7 +83,9 @@ const Home = () => {
           clearEditTutorialForm={clearEditTutorialForm}
         />
       )}
-      {tutorials.length > 0 && renderTutorials()}
+      {tutorials.length > 0 && (
+        <div className="myTutorials">{renderTutorials()}</div>
+      )}
       {user === null && (
         <div className="tutorials">
           <DefaultTutorials

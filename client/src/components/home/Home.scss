@@ -1,4 +1,6 @@
 //
+@import "../../style/mixins.scss";
+
 body {
   background-color: var(--main-back-color);
 }
@@ -14,13 +16,9 @@ body {
   }
 
   .tutorials {
-    padding: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    // background-color: var(--main-back-color);
-    background-color: teal;
-    justify-content: space-evenly;
-    // align-self: auto;
-    flex: 1 0 21%;
+    @include tutsort();
+  }
+  .myTutorials {
+    @include tutsort();
   }
 }
