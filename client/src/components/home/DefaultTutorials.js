@@ -1,3 +1,4 @@
+import "./DefaultTutorials.scss";
 import defaultTutorial from "../../img/defaultTutorial.jpg";
 
 function DefaultTutorials({ title, description }) {

@@ -1,6 +1,7 @@
 import React from "react";
 import Axios from "axios";
 import defaultTutorial from "../../img/defaultTutorial.jpg";
+import "./Tutorial.scss";
 
 function Tutorial({ tutorial, getTutorials, editTutorial }) {
   const defaultimg = <img src={defaultTutorial} alt="tutorialImage" />;

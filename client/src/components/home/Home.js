@@ -5,6 +5,7 @@ import TutorialEditor from "./TutorialEditor";
 import DefaultTutorials from "./DefaultTutorials";
 import UserContext from "../../context/UserContext";
 import { Link } from "react-router-dom";
+import "./Home.scss";
 
 const Home = () => {
   const [tutorials, setTutorials] = useState([]);
