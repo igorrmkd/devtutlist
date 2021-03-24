@@ -2,4 +2,7 @@
 
 .mytutorial {
   @include tutorials();
+  border-radius: 5px;
+  // box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;
+  box-shadow: 1px 1px 10px var(--shadow-tut);
 }

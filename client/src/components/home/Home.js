@@ -72,7 +72,11 @@ const Home = () => {
       )}
 
       {!newTut && user && (
-        <button onClick={() => setNewTut(true)}>Add Tutorial</button>
+        <container className="addtut">
+          <button className="add" onClick={() => setNewTut(true)}>
+            Add Tutorial
+          </button>
+        </container>
       )}
       {newTut && (
         <TutorialEditor
