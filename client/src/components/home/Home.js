@@ -53,9 +53,9 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <div className="home">
       {!user && (
-        <main>
+        <main className="main">
           <h2>Welcome to WebDev tutorials</h2>
           <p> Start creating your own list of tutorials</p>
           <p>
@@ -85,12 +85,7 @@ const Home = () => {
       )}
       {tutorials.length > 0 && renderTutorials()}
       {user === null && (
-        <div>
-          {/* <h2>Welcome to WebDev tutorials</h2>
-          <p>
-            <Link to="/register">Register here </Link>
-            <span>to put your own tutorials on the list</span>
-          </p> */}
+        <div className="tutorials">
           <DefaultTutorials
             title="Your First Favorite Tutorial"
             description="Tutorial description"

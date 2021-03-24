@@ -1,17 +1,19 @@
 :root {
   --main-back-color: #c4eaf5;
-  --txt1color: #26292c;
-  --txt2color: #4f555a;
-  --txt3color: #676f75;
+  --h1color: #26292c;
+  --h23color: #4f555a;
+  --pcolor: #676f75;
+  --navcolor: #37a2c0;
+  --footer: #91acb3;
 }
 
 h1 {
-  color: var(--txt1color);
+  color: var(--h1color);
 }
 
 h2 {
-  color: var(--txt2color);
+  color: var(--h23color);
 }
 p {
-  color: var(--txt3color);
+  color: var(--pcolor);
 }

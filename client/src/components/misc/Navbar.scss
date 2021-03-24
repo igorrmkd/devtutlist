@@ -1,0 +1,15 @@
+.navbar {
+  background-color: var(--navcolor);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a {
+    margin-right: 2rem;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+}

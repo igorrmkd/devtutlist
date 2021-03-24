@@ -16,7 +16,7 @@ function Tutorial({ tutorial, getTutorials, editTutorial }) {
   }
 
   return (
-    <div>
+    <div className="tutorial">
       {tutorial.img ? newImg : defaultimg}
       {tutorial.title && <h2>{tutorial.title}</h2>}
       {tutorial.description && <h2>{tutorial.description}</h2>}

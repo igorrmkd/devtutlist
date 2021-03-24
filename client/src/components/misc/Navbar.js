@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../context/UserContext";
+import "./Navbar.scss";
 
 const Navbar = () => {
   const { user, getUser } = useContext(UserContext);
@@ -12,18 +13,22 @@ const Navbar = () => {
   }
 
   return (
-    <div>
-      <Link to="/">
-        <h1>WebDev tutorials</h1>
-      </Link>
-      {user === null ? (
-        <>
-          <Link to="/login">Log in</Link>
-          <Link to="/register">Register</Link>
-        </>
-      ) : (
-        user && <button onClick={logout}>Log out</button>
-      )}
+    <div className="navbar">
+      <div className="logo">
+        <Link to="/">
+          <h1>WebDev tutorials</h1>
+        </Link>
+      </div>
+      <div className="links">
+        {user === null ? (
+          <>
+            <Link to="/login">Log in</Link>
+            <Link to="/register">Register</Link>
+          </>
+        ) : (
+          user && <button onClick={logout}>Log out</button>
+        )}
+      </div>
     </div>
   );
 };
