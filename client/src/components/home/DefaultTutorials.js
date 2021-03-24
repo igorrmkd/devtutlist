@@ -5,7 +5,7 @@ function DefaultTutorials({ title, description }) {
   const defaultimg = <img src={defaultTutorial} alt="tutorialImage" />;
 
   return (
-    <div>
+    <div className="defaultTutorial">
       {defaultimg}
       <h2>{title}</h2>
       <h2>{description}</h2>

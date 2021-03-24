@@ -1,0 +1,9 @@
+@mixin tutorials() {
+  img {
+    width: 400px;
+    height: 266px;
+    margin: 1rem 2rem 1rem 2rem;
+    object-fit: cover;
+  }
+  text-align: center;
+}
