@@ -3,6 +3,9 @@
 .defaultTutorial {
   @include tutorials();
   box-shadow: var(--shadow-normal); // normal
+  p {
+    padding-bottom: 1.6rem;
+  }
 }
 
 .defaultTutorial:hover {
