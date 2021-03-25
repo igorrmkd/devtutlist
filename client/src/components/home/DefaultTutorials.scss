@@ -2,4 +2,12 @@
 
 .defaultTutorial {
   @include tutorials();
+  box-shadow: var(--shadow-normal); // normal
+}
+
+.defaultTutorial:hover {
+  box-shadow: var(--shadow-hover);
+}
+.defaultTutorial:active {
+  box-shadow: var(--shadow-active);
 }

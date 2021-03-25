@@ -16,7 +16,12 @@
   --delete-btn: #ef5350;
   --tut-frame: #ccf4ff;
   --shadow-tut: #afd2db;
-  --shadow-tut-dark: #9bb9c2;
+  --shadow-tut-dark: #9accdb;
+  //
+  // box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;
+  --shadow-normal: 1px 1px 10px 1px var(--shadow-tut);
+  --shadow-hover: 1px 1px 10px 5px var(--shadow-tut);
+  --shadow-active: 1px 1px 5px 5px var(--shadow-tut-dark);
 }
 
 h1 {

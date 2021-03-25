@@ -34,6 +34,9 @@ body {
   }
   .myTutorials {
     @include tutsort();
+    // :hover {
+    //   box-shadow: 1px 1px 10px 5px var(--shadow-tut);
+    // }
   }
 
   button.edit {
@@ -46,5 +49,12 @@ body {
   button.add {
     transform: translateX(50vw) translateX(-55%);
     @include addBtn($margin: 1rem, $color: var(--add-button));
+    box-shadow: var(--shadow-normal);
+    &:hover {
+      box-shadow: var(--shadow-hover);
+    }
+    &:active {
+      box-shadow: var(--shadow-active);
+    }
   }
 }
