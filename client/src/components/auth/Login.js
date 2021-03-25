@@ -3,6 +3,7 @@ import React, { useState, useContext } from "react";
 import userContext from "../../context/UserContext";
 import { Link, useHistory } from "react-router-dom";
 import ErrorMessage from "../misc/ErrorMessage";
+import "../../style/forms.scss";
 
 const Login = () => {
   const [formEmail, setFormEmail] = useState("");
@@ -37,36 +38,42 @@ const Login = () => {
   }
 
   return (
-    <div>
-      <h2>Log in</h2>
-      {errorMessage && (
-        <ErrorMessage
-          message={errorMessage}
-          clear={() => setErrorMessage(null)}
-        />
-      )}
-      <form onSubmit={login}>
-        <label htmlFor="form-email">Email</label>
-        <input
-          id="form-email"
-          type="email"
-          value={formEmail}
-          onChange={e => setFormEmail(e.target.value)}
-        />
-        <label htmlFor="form-password">Password</label>
-        <input
-          id="form-password"
-          type="password"
-          value={formPassword}
-          onChange={e => setFormPassword(e.target.value)}
-        />
+    <section>
+      <main className="content">
+        <div>
+          <h2>Log in</h2>
+          {errorMessage && (
+            <ErrorMessage
+              message={errorMessage}
+              clear={() => setErrorMessage(null)}
+            />
+          )}
+        </div>
 
-        <button type="submit">Login</button>
-        <p>
-          Don't have an account yet? <Link to="/register">Register here</Link>{" "}
-        </p>
-      </form>
-    </div>
+        <form onSubmit={login}>
+          <label htmlFor="form-email">Email</label>
+          <input
+            id="form-email"
+            type="email"
+            value={formEmail}
+            onChange={e => setFormEmail(e.target.value)}
+          />
+          <label htmlFor="form-password">Password</label>
+          <input
+            id="form-password"
+            type="password"
+            value={formPassword}
+            onChange={e => setFormPassword(e.target.value)}
+          />
+
+          <button type="submit">Login</button>
+          <p>Don't have an account yet?</p>
+          <p>
+            <Link to="/register">Register here</Link>
+          </p>
+        </form>
+      </main>
+    </section>
   );
 };
 

@@ -1,0 +1,59 @@
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--form-back-color);
+
+    h2 {
+      display: flex;
+      color: var(--h1color);
+      align-self: auto;
+      margin-top: 2rem;
+    }
+
+    form {
+      width: 20rem;
+      display: flex;
+      flex-direction: column;
+      align-self: end;
+      margin: 1rem;
+      input {
+        background-color: var(--form-input-color);
+        margin: 0.2rem 0rem 1.5rem 0rem;
+        padding: 0.2rem 0rem 0.2rem 0rem;
+        border-radius: 5px;
+        border: none;
+      }
+      button {
+        background-color: var(--form-button-color);
+        margin-bottom: 0.9rem;
+        margin-top: 0.9rem;
+        padding: 0.2rem 0rem 0.2rem 0rem;
+        border-radius: 5px;
+        border: none;
+      }
+      p {
+        text-align: center;
+      }
+      p:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+      a {
+        background-color: var(--navcolor);
+        border: none;
+        border-radius: 5px;
+        padding: 0.2rem 0.3rem 0.2rem 0.3rem;
+        &:hover {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
