@@ -1,3 +1,4 @@
+@import "../../style/mixins.scss";
 .navbar {
   background-color: var(--navcolor);
   display: flex;
@@ -6,11 +7,30 @@
   padding: 0 5% 0 5%;
 
   a {
+    @include menu-btns($color: var(--navcolor));
     margin-right: 2rem;
+    :hover{
+      color: #3a3d40; 
+    }
+    
+  }
+  .links{
+    :hover{
+      font-weight: bold;
+      color: #3a3d40; 
+    }
   }
 
   .logo {
     display: flex;
     align-items: center;
+    box-shadow: none;
   }
+
+
+  button{
+    @include menu-btns($color: var(--navcolor));
+  }
+
+
 }
