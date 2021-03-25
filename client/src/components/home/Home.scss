@@ -41,9 +41,19 @@ body {
 
   button.edit {
     @include editDelBtn($margin: 1.5rem, $color: var(--edit-button));
+    &:hover {
+      font-weight: 500;
+      padding-right: 0.48rem;
+      background-color: darken(#92d594, 5%);
+    }
   }
   button.delete {
     @include editDelBtn($margin: 0.5rem, $color: var(--delete-btn));
+    &:hover {
+      font-weight: 500;
+      padding-left: 0.48rem;
+      background-color: darken(#ef5350, 5%);
+    }
   }
 
   button.add {
