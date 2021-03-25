@@ -1,0 +1,15 @@
+section {
+  .title {
+    color: var(--red-btn);
+  }
+  .clear-btn {
+    text-align: center;
+    background-color: var(--navcolor);
+    border: none;
+    border-radius: 5px;
+    padding: 0.2rem 0.3rem 0.2rem 0.3rem;
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}

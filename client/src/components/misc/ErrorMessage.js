@@ -3,10 +3,12 @@ import "./ErrorMessage.scss";
 
 function ErrorMessage({ message, clear }) {
   return (
-    <div>
-      <p>{message}</p>
-      <button onClick={clear}>Clear</button>
-    </div>
+    <section>
+      <p className="title">{message}</p>
+      <button className="clear-btn" onClick={clear}>
+        Clear
+      </button>
+    </section>
   );
 }
 

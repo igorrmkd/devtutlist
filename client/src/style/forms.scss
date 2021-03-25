@@ -9,6 +9,8 @@ section {
     textarea {
       border: none;
       border-radius: 5px;
+      resize: none;
+      background-color: var(--form-input-color);
       margin: 0.2rem 0rem 1.1rem 0rem;
     }
   }

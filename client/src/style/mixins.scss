@@ -69,12 +69,12 @@
     h2 {
       display: flex;
       color: var(--h1color);
-      align-self: auto;
+      align-self: center;
       margin-top: 2rem;
     }
 
     form {
-      width: 20rem;
+      width: 25rem;
       display: flex;
       flex-direction: column;
       align-self: end;
@@ -87,15 +87,13 @@
         border: none;
       }
       button {
-        &.red-btn {
-          background-color: var(--red-btn);
-        }
-        background-color: var(--form-button-color);
+        background-color: var(--submit-button);
         margin-bottom: 0.9rem;
         margin-top: 0.9rem;
         padding: 0.2rem 0rem 0.2rem 0rem;
         border-radius: 5px;
         border: none;
+        box-shadow: 1px 1px 10px 1px var(--shadow-tut); // normal
       }
       p {
         text-align: center;
