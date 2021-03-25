@@ -3,6 +3,12 @@
 section {
   &.logreg {
     @include formSection();
+    form button:hover {
+      background-color: darken(#92d594, 5%);
+    }
+    form button:active {
+      box-shadow: var(--shadow-active);
+    }
   }
   &.editForm {
     @include formSection();
@@ -12,6 +18,13 @@ section {
       resize: none;
       background-color: var(--form-input-color);
       margin: 0.2rem 0rem 1.1rem 0rem;
+    }
+
+    form button:hover {
+      background-color: darken(#92d594, 5%);
+    }
+    form button:active {
+      box-shadow: var(--shadow-active);
     }
   }
 }
