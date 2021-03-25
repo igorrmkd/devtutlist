@@ -39,7 +39,7 @@ const Register = () => {
   }
 
   return (
-    <section>
+    <section className="logreg">
       <main className="content">
         <div>
           <h2>Register a new account</h2>

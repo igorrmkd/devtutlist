@@ -15,16 +15,16 @@ body {
     text-align: center;
     padding: 1rem;
 
-    button{
+    button {
       background-color: #60c5e1;
       border: none;
       border-radius: 5px;
       padding: 0.1rem 0.2rem 0.1rem 0.2rem;
 
-      &:hover{
-      font-weight: bold;
-      padding: 0.1rem 0.18rem 0.1rem 0.18rem;
-      color: #3a3d40; 
+      &:hover {
+        font-weight: bold;
+        padding: 0.1rem 0.18rem 0.1rem 0.18rem;
+        color: #3a3d40;
       }
     }
   }
@@ -40,7 +40,7 @@ body {
     @include editDelBtn($margin: 1.5rem, $color: var(--edit-button));
   }
   button.delete {
-    @include editDelBtn($margin: 0.5rem, $color: var(--delete-button));
+    @include editDelBtn($margin: 0.5rem, $color: var(--red-btn));
   }
 
   button.add {

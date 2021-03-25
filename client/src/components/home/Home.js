@@ -72,11 +72,11 @@ const Home = () => {
       )}
 
       {!newTut && user && (
-        <container className="addtut">
+        <section className="addtut">
           <button className="add" onClick={() => setNewTut(true)}>
             Add your favorite tutorials
           </button>
-        </container>
+        </section>
       )}
       {newTut && (
         <TutorialEditor

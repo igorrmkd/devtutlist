@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./TutorialEditor.scss";
+// import "./TutorialEditor.scss";
+import "../../style/forms.scss";
 import Axios from "axios";
 import ErrorMessage from "../misc/ErrorMessage";
 
@@ -67,46 +68,52 @@ function TutorialEditor({
   }
 
   return (
-    <div>
-      {errorMessage && (
-        <ErrorMessage
-          message={errorMessage}
-          clear={() => setErrorMessage(null)}
-        />
-      )}
-      <form onSubmit={saveTutorial}>
-        <label htmlFor="image-link">Image</label>
-        <input
-          id="image-link"
-          type="text"
-          value={imgLink}
-          onChange={e => setImgLink(e.target.value)}
-        ></input>
-        <label htmlFor="tutorial-name">Title</label>
-        <input
-          id="tutorial-name"
-          type="text"
-          value={tutName}
-          onChange={e => setTutName(e.target.value)}
-        ></input>
-        <label htmlFor="description">Description</label>
-        <textarea
-          id="description"
-          value={description}
-          onChange={e => setDescription(e.target.value)}
-        />
-        <button type="submit">Save changes</button>
-        <button
-          type="button"
-          onClick={() => {
-            closeTutForm();
-            clearEditTutorialForm();
-          }}
-        >
-          Cancel
-        </button>
-      </form>
-    </div>
+    <section className="editForm">
+      <main className="content">
+        <div>
+          {errorMessage && (
+            <ErrorMessage
+              message={errorMessage}
+              clear={() => setErrorMessage(null)}
+            />
+          )}
+          <form onSubmit={saveTutorial}>
+            <label htmlFor="image-link">Image Url</label>
+            <input
+              id="image-link"
+              type="text"
+              value={imgLink}
+              onChange={e => setImgLink(e.target.value)}
+            ></input>
+            <label htmlFor="tutorial-name">Title</label>
+            <input
+              id="tutorial-name"
+              type="text"
+              value={tutName}
+              onChange={e => setTutName(e.target.value)}
+            ></input>
+            <label htmlFor="description">Short Description</label>
+            <textarea
+              id="description"
+              value={description}
+              rows="3"
+              onChange={e => setDescription(e.target.value)}
+            />
+            <button type="submit">Save changes</button>
+            <button
+              className="red-btn"
+              type="button"
+              onClick={() => {
+                closeTutForm();
+                clearEditTutorialForm();
+              }}
+            >
+              Cancel
+            </button>
+          </form>
+        </div>
+      </main>
+    </section>
   );
 }
 

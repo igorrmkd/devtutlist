@@ -38,7 +38,7 @@ const Login = () => {
   }
 
   return (
-    <section>
+    <section className="logreg">
       <main className="content">
         <div>
           <h2>Log in</h2>
