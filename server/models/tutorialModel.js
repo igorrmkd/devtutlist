@@ -3,6 +3,7 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const tutorialSchema = new mongoose.Schema(
   {
+    url: { type: String },
     img: { type: String },
     title: { type: String, required: true },
     description: { type: String },

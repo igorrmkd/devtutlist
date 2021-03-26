@@ -14,7 +14,7 @@ router.get("/", auth, async (req, res) => {
 
 router.post("/", auth, async (req, res) => {
   try {
-    const { img, title, description } = req.body;
+    const { url, img, title, description } = req.body;
     // validation
     if (!title && !description) {
       return res.status(400).json({
@@ -23,6 +23,7 @@ router.post("/", auth, async (req, res) => {
     }
 
     const newTutorial = new Tutorial({
+      url,
       img,
       title,
       description,

@@ -11,6 +11,7 @@ function TutorialEditor({
   editTutorialData,
   clearEditTutorialForm,
 }) {
+  const [urlLink, setUrlLink] = useState("");
   const [imgLink, setImgLink] = useState("");
   const [tutName, setTutName] = useState("");
   const [description, setDescription] = useState("");
@@ -18,6 +19,7 @@ function TutorialEditor({
 
   useEffect(() => {
     if (editTutorialData) {
+      setUrlLink(editTutorialData.url ? editTutorialData.url : "");
       setImgLink(editTutorialData.img ? editTutorialData.img : "");
       setTutName(editTutorialData.title ? editTutorialData.title : "");
       setDescription(
@@ -30,6 +32,7 @@ function TutorialEditor({
     e.preventDefault();
 
     const tutorialData = {
+      url: urlLink ? urlLink : undefined,
       img: imgLink ? imgLink : undefined,
       title: tutName ? tutName : undefined,
       description: description ? description : undefined,
@@ -62,6 +65,7 @@ function TutorialEditor({
     if (newTut) {
       return setNewTut(false);
     }
+    setUrlLink("");
     setImgLink("");
     setTutName("");
     setDescription("");
@@ -78,6 +82,13 @@ function TutorialEditor({
             />
           )}
           <form onSubmit={saveTutorial}>
+            <label htmlFor="url-link">Tutorial Url</label>
+            <input
+              id="tutorial-link"
+              type="text"
+              value={urlLink}
+              onChange={e => setUrlLink(e.target.value)}
+            ></input>
             <label htmlFor="image-link">Image Url</label>
             <input
               id="image-link"
