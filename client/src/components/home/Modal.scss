@@ -1,0 +1,38 @@
+.home {
+  justify-content: flex-start;
+
+  .modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    z-index: 10000;
+
+    //****************************************
+    // background blur effect
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+      -webkit-backdrop-filter: blur(10px);
+      background-color: var(--back-blur-light);
+      backdrop-filter: blur(10px);
+    }
+
+    /* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
+    @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+      background-color: var(--back-blur-dark);
+    }
+    //****************************************
+    width: 100%;
+    height: 100%;
+    .modal-position {
+      align-content: center;
+      padding-top: 11vh;
+      .the-modal-form {
+        box-shadow: 1px 1px 10px 5px var(--shadow-tut);
+        border-radius: 5px;
+        .title {
+          color: red;
+        }
+      }
+    }
+  }
+}

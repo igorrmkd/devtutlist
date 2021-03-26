@@ -18,6 +18,8 @@
   --tut-frame: #ccf4ff;
   --shadow-tut: #afd2db;
   --shadow-tut-dark: #9accdb;
+  --back-blur-light: rgba(54, 90, 102, 0.575);
+  --back-blur-dark: rgba(33, 57, 65, 0.575);
   //
   // box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;
   --shadow-normal: 1px 1px 10px 1px var(--shadow-tut);

@@ -18,7 +18,7 @@ router.post("/", auth, async (req, res) => {
     // validation
     if (!title && !description) {
       return res.status(400).json({
-        errorMessage: "you must put Title and Description",
+        errorMessage: "You must put Title and Description!",
       });
     }
 

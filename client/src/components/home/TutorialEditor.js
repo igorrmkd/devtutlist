@@ -70,7 +70,7 @@ function TutorialEditor({
   return (
     <section className="editForm">
       <main className="content">
-        <div>
+        <div className="the-modal-form">
           {errorMessage && (
             <ErrorMessage
               message={errorMessage}

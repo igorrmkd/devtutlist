@@ -6,6 +6,7 @@ import DefaultTutorials from "./DefaultTutorials";
 import UserContext from "../../context/UserContext";
 import { Link } from "react-router-dom";
 import "./Home.scss";
+import "./Modal.scss";
 
 const Home = () => {
   const [tutorials, setTutorials] = useState([]);
@@ -79,13 +80,17 @@ const Home = () => {
         </section>
       )}
       {newTut && (
-        <TutorialEditor
-          setNewTut={setNewTut}
-          getTutorials={getTutorials}
-          newTut={newTut}
-          editTutorialData={editTutorialData}
-          clearEditTutorialForm={clearEditTutorialForm}
-        />
+        <div className="modal-container">
+          <div className="modal-position">
+            <TutorialEditor
+              setNewTut={setNewTut}
+              getTutorials={getTutorials}
+              newTut={newTut}
+              editTutorialData={editTutorialData}
+              clearEditTutorialForm={clearEditTutorialForm}
+            />
+          </div>
+        </div>
       )}
       {tutorials.length > 0 && (
         <div className="myTutorials">{renderTutorials()}</div>

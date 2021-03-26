@@ -1,13 +1,15 @@
 section {
   .title {
     color: var(--red-btn);
+    margin: 2rem 0rem 0rem 2.1rem;
   }
   .clear-btn {
+    margin-left: 0.5rem;
     text-align: center;
     background-color: var(--navcolor);
     border: none;
     border-radius: 5px;
-    padding: 0.2rem 0.3rem 0.2rem 0.3rem;
+    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
     &:hover {
       font-weight: bold;
     }
