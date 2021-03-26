@@ -11,15 +11,17 @@
   --pcolor: #494d50;
   --navcolor: #60c5e1;
   --footer: #60c5e1;
-  --add-button: #ccf4ff;
+  --add-button: #92d594;
+  // --add-button: #d9f7ff;
   --submit-button: #92d594;
   --edit-button: #92d594;
   --delete-btn: #ef5350;
-  --tut-frame: #ccf4ff;
+  --tut-frame: #d9f7ff;
   --shadow-tut: #afd2db;
   --shadow-tut-dark: #9accdb;
-  --back-blur-light: rgba(54, 90, 102, 0.575);
-  --back-blur-dark: rgba(33, 57, 65, 0.575);
+  --back-blur-light: rgba(188, 224, 235, 0.438);
+  --back-blur-dark: rgba(151, 190, 202, 0.678);
+
   //
   // box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;
   --shadow-normal: 1px 1px 10px 1px var(--shadow-tut);

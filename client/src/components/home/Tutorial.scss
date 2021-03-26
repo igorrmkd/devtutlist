@@ -2,12 +2,14 @@
 
 .mytutorial {
   @include tutorials();
-  box-shadow: var(--shadow-normal); // normal
+  // box-shadow: var(--shadow-normal); // normal
+  box-shadow: var(--shadow-hover);
+
   color: var(--pcolor);
 }
 
 .mytutorial:hover {
-  box-shadow: var(--shadow-hover);
+  // box-shadow: var(--shadow-hover);
 }
 .mytutorial:active {
   box-shadow: var(--shadow-active);
@@ -17,8 +19,8 @@
   img {
     transition: transform 0.2s ease;
     &:hover {
-      filter: brightness(105%);
-      transform: scale(1.01);
+      filter: brightness(85%);
+      // transform: scale(1.01);
     }
   }
 }

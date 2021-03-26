@@ -11,9 +11,9 @@
     //****************************************
     // background blur effect
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-      -webkit-backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(5px);
       background-color: var(--back-blur-light);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(5px);
     }
 
     /* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
@@ -27,7 +27,7 @@
       align-content: center;
       padding-top: 11vh;
       .the-modal-form {
-        box-shadow: 1px 1px 10px 5px var(--shadow-tut);
+        box-shadow: 1px 1px 5px 3px var(--shadow-tut);
         border-radius: 5px;
         .title {
           justify-content: center;

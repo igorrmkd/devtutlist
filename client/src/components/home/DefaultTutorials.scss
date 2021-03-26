@@ -2,7 +2,8 @@
 
 .defaultTutorial {
   @include tutorials();
-  box-shadow: var(--shadow-normal); // normal
+  // box-shadow: var(--shadow-normal); // normal
+  box-shadow: var(--shadow-hover);
   color: var(--pcolor);
   p {
     padding-bottom: 1.6rem;
@@ -10,7 +11,7 @@
 }
 
 .defaultTutorial:hover {
-  box-shadow: var(--shadow-hover);
+  // box-shadow: var(--shadow-hover);
 }
 .defaultTutorial:active {
   box-shadow: var(--shadow-active);
@@ -20,8 +21,8 @@
   img {
     transition: transform 0.2s ease;
     &:hover {
-      filter: brightness(105%);
-      transform: scale(1.01);
+      filter: brightness(85%);
+      // transform: scale(1.01);
     }
   }
 }

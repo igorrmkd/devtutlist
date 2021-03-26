@@ -63,6 +63,7 @@ body {
     &:hover {
       box-shadow: var(--shadow-hover);
       font-weight: 500;
+      font-size: 1.09rem;
     }
     &:active {
       box-shadow: var(--shadow-active);

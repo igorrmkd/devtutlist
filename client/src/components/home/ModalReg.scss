@@ -17,7 +17,7 @@ div {
 
     /* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
     @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-      background-color: var(--back-blur-dark);
+      background-color: var(--back-blur-light);
     }
     //****************************************
     width: 100%;
@@ -26,7 +26,7 @@ div {
       align-content: center;
       padding-bottom: 30vh;
       .content {
-        box-shadow: 1px 1px 10px 5px var(--shadow-tut);
+        box-shadow: 1px 1px 5px 3px var(--shadow-tut);
         border-radius: 5px;
         div h2 {
           justify-content: center;
