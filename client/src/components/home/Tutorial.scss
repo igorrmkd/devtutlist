@@ -11,3 +11,13 @@
 .mytutorial:active {
   box-shadow: var(--shadow-active);
 }
+
+.img-link {
+  img {
+    transition: transform 0.2s ease;
+    &:hover {
+      filter: brightness(105%);
+      transform: scale(1.01);
+    }
+  }
+}
