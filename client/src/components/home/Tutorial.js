@@ -15,14 +15,16 @@ function Tutorial({ tutorial, getTutorials, editTutorial }) {
     }
   }
 
-  // <a href="LandingPageURL">
-  // <img src="ImageURL" alt="text describing the image">
-  // </a>
-
   return (
     <div className="mytutorial">
-      {tutorial.url && <p>{tutorial.url}</p>}
-      {tutorial.img ? newImg : defaultimg}
+      <a
+        className="img-link"
+        href={tutorial.url}
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        {tutorial.img ? newImg : defaultimg}
+      </a>
       {tutorial.title && <h2>{tutorial.title}</h2>}
       {tutorial.description && <p>{tutorial.description}</p>}
       <section className="buttons">
