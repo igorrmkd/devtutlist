@@ -7,7 +7,7 @@ function DefaultTutorials({ title, description }) {
   return (
     <div className="defaultTutorial">
       {defaultimg}
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       <p>{description}</p>
     </div>
   );

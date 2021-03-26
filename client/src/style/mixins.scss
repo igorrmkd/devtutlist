@@ -8,6 +8,15 @@
   text-align: center;
   margin: 1rem 1rem 1rem 1rem;
   background-color: var(--tut-frame);
+
+  h2 {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  p {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
   //
   border-radius: 5px;
 }
@@ -76,6 +85,15 @@
       flex-direction: column;
       align-self: end;
       margin: 2rem;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--pcolor);
+      label {
+        span {
+          color: var(--delete-btn);
+          font-size: 0.9rem;
+        }
+      }
       input {
         background-color: var(--form-input-color);
         margin: 0.2rem 0rem 1.5rem 0rem;

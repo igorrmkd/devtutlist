@@ -3,6 +3,7 @@
 .defaultTutorial {
   @include tutorials();
   box-shadow: var(--shadow-normal); // normal
+  color: var(--pcolor);
   p {
     padding-bottom: 1.6rem;
   }

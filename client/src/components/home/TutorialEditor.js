@@ -96,15 +96,21 @@ function TutorialEditor({
               value={imgLink}
               onChange={e => setImgLink(e.target.value)}
             ></input>
-            <label htmlFor="tutorial-name">Title</label>
+            <label htmlFor="tutorial-name">
+              Title <span>(max 38 chars)</span>
+            </label>
             <input
+              maxlength="38"
               id="tutorial-name"
               type="text"
               value={tutName}
               onChange={e => setTutName(e.target.value)}
             ></input>
-            <label htmlFor="description">Short Description</label>
+            <label htmlFor="description">
+              Short Description <span>(max 50 chars)</span>
+            </label>
             <textarea
+              maxlength="50"
               id="description"
               value={description}
               rows="3"

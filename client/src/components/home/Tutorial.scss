@@ -3,6 +3,7 @@
 .mytutorial {
   @include tutorials();
   box-shadow: var(--shadow-normal); // normal
+  color: var(--pcolor);
 }
 
 .mytutorial:hover {

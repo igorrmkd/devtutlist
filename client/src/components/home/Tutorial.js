@@ -25,7 +25,7 @@ function Tutorial({ tutorial, getTutorials, editTutorial }) {
       >
         {tutorial.img ? newImg : defaultimg}
       </a>
-      {tutorial.title && <h2>{tutorial.title}</h2>}
+      {tutorial.title && <h3>{tutorial.title}</h3>}
       {tutorial.description && <p>{tutorial.description}</p>}
       <section className="buttons">
         <button className="edit" onClick={() => editTutorial(tutorial)}>
