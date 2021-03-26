@@ -38,42 +38,46 @@ const Login = () => {
   }
 
   return (
-    <section className="logreg">
-      <main className="content">
-        <div>
-          <h2>Log in</h2>
-          {errorMessage && (
-            <ErrorMessage
-              message={errorMessage}
-              clear={() => setErrorMessage(null)}
-            />
-          )}
+    <div className="modal-container-logreg">
+      <section className="logreg">
+        <div className="modal-position-reg">
+          <main className="content">
+            <div>
+              <h2>Log in</h2>
+              {errorMessage && (
+                <ErrorMessage
+                  message={errorMessage}
+                  clear={() => setErrorMessage(null)}
+                />
+              )}
+            </div>
+
+            <form onSubmit={login}>
+              <label htmlFor="form-email">Email</label>
+              <input
+                id="form-email"
+                type="email"
+                value={formEmail}
+                onChange={e => setFormEmail(e.target.value)}
+              />
+              <label htmlFor="form-password">Password</label>
+              <input
+                id="form-password"
+                type="password"
+                value={formPassword}
+                onChange={e => setFormPassword(e.target.value)}
+              />
+
+              <button type="submit">Login</button>
+              <p>Don't have an account yet?</p>
+              <p>
+                <Link to="/register">Register here</Link>
+              </p>
+            </form>
+          </main>
         </div>
-
-        <form onSubmit={login}>
-          <label htmlFor="form-email">Email</label>
-          <input
-            id="form-email"
-            type="email"
-            value={formEmail}
-            onChange={e => setFormEmail(e.target.value)}
-          />
-          <label htmlFor="form-password">Password</label>
-          <input
-            id="form-password"
-            type="password"
-            value={formPassword}
-            onChange={e => setFormPassword(e.target.value)}
-          />
-
-          <button type="submit">Login</button>
-          <p>Don't have an account yet?</p>
-          <p>
-            <Link to="/register">Register here</Link>
-          </p>
-        </form>
-      </main>
-    </section>
+      </section>
+    </div>
   );
 };
 
