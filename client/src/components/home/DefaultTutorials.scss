@@ -15,3 +15,13 @@
 .defaultTutorial:active {
   box-shadow: var(--shadow-active);
 }
+
+.defaultTutorial {
+  img {
+    transition: transform 0.2s ease;
+    &:hover {
+      filter: brightness(105%);
+      transform: scale(1.01);
+    }
+  }
+}
