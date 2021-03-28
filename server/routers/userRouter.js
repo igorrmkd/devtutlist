@@ -19,7 +19,7 @@ router.post("/", async (req, res) => {
 
     if (password !== passwordVerify)
       return res.status(400).json({
-        errorMessage: "Please enter the same password twice for verification",
+        errorMessage: "Please enter the same password twice",
       });
 
     // Allow only one account per email
