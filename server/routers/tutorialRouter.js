@@ -3,9 +3,10 @@ const Tutorial = require("../models/tutorialModel");
 const router = Router();
 const auth = require("../middleware/auth");
 
-router.get("/", auth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-    const tutorials = await Tutorial.find({ user: req.user });
+    const tutorials = await Tutorial.find(); // show all users tutorials
+    // const tutorials = await Tutorial.find({ user: req.user });
     res.json(tutorials);
   } catch (err) {
     res.status(500).send();

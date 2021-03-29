@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import UserContext from "../../context/UserContext";
 import Axios from "axios";
 import defaultTutorial from "../../img/defaultTutorial.jpg";
 import "./Tutorial.scss";
 
 function Tutorial({ tutorial, getTutorials, editTutorial }) {
+  const { user } = useContext(UserContext);
   const defaultimg = <img src={defaultTutorial} alt="tutorialImage" />;
   let newImgUrl = tutorial.img;
   let newImg = <img src={newImgUrl} alt="tutorial" />;
@@ -14,6 +16,9 @@ function Tutorial({ tutorial, getTutorials, editTutorial }) {
       getTutorials();
     }
   }
+
+  let showBtns =
+    user !== tutorial.user ? "p-padding-for-visitors" : "p-for-users";
 
   return (
     <div className="mytutorial">
@@ -26,14 +31,20 @@ function Tutorial({ tutorial, getTutorials, editTutorial }) {
         {tutorial.img ? newImg : defaultimg}
       </a>
       {tutorial.title && <h3>{tutorial.title}</h3>}
-      {tutorial.description && <p>{tutorial.description}</p>}
+      {tutorial.description && (
+        <p className={showBtns}>{tutorial.description}</p>
+      )}
       <section className="buttons">
-        <button className="edit" onClick={() => editTutorial(tutorial)}>
-          Edit
-        </button>
-        <button className="delete" onClick={deleteTutorial}>
-          Delete
-        </button>
+        {user === tutorial.user && (
+          <button className="edit" onClick={() => editTutorial(tutorial)}>
+            Edit
+          </button>
+        )}
+        {user === tutorial.user && (
+          <button className="delete" onClick={deleteTutorial}>
+            Delete
+          </button>
+        )}
       </section>
     </div>
   );
