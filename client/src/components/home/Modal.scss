@@ -32,6 +32,9 @@
         .title {
           justify-content: center;
           color: var(--delete-btn);
+          .clear-btn:hover {
+            background-color: var(--edit-button);
+          }
         }
       }
     }

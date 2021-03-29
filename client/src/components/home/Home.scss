@@ -16,7 +16,7 @@ body {
     padding: 0.5rem 1rem 0rem 1rem;
 
     button {
-      background-color: #60c5e1;
+      background-color: var(--navcolor);
       border: none;
       border-radius: 5px;
       padding: 0.1rem 0.2rem 0.1rem 0.2rem;
@@ -24,6 +24,7 @@ body {
       &:hover {
         font-weight: bold;
         padding: 0.1rem 0.18rem 0.1rem 0.18rem;
+        background-color: var(--edit-button);
         color: #3a3d40;
       }
     }
@@ -58,12 +59,13 @@ body {
 
   button.add {
     transform: translateX(50vw) translateX(-55%);
-    @include addBtn($margin: 1rem, $color: var(--add-button));
+    @include addBtn($margin: 1rem, $color: var(--navcolor));
     box-shadow: var(--shadow-normal);
     &:hover {
       box-shadow: var(--shadow-hover);
       font-weight: 500;
       font-size: 1.09rem;
+      background-color: var(--add-button);
     }
     &:active {
       box-shadow: var(--shadow-active);
