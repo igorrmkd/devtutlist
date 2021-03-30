@@ -4,20 +4,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 5% 0 5%;
+  padding: 0 8% 0 8%;
 
   a {
     @include menu-btns($color: var(--navcolor));
     margin-right: 2rem;
-    :hover{
-      color: #3a3d40; 
+    :hover {
+      color: #3a3d40;
     }
-    
   }
-  .links{
-    :hover{
+  .links {
+    :hover {
       font-weight: bold;
-      color: #3a3d40; 
+      color: #3a3d40;
     }
   }
 
@@ -25,12 +24,10 @@
     display: flex;
     align-items: center;
     box-shadow: none;
+    padding-left: 2rem;
   }
 
-
-  button{
+  button {
     @include menu-btns($color: var(--navcolor));
   }
-
-
 }

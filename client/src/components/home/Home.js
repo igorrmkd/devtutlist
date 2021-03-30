@@ -52,22 +52,28 @@ const Home = () => {
     <div className="home">
       {!user && (
         <main className="main">
-          <h2>Welcome to WebDev tutorials</h2>
-          <p> Start creating your own list of tutorials</p>
-          <p>
-            {" "}
-            after you{" "}
-            <span>
-              <Link to="/register">
-                <button>Create</button>
-              </Link>
-            </span>{" "}
-            an account
-          </p>
-          <div>
-            <h2>I will Show something here</h2>
-            <h2>but only for not logged in visitors</h2>
-          </div>
+          <section className="hero-section">
+            <div className="hero">
+              <div className="main-title">
+                <h1>The Best WebDev Tutorials</h1>
+                <h2>for beginners</h2>
+              </div>
+
+              <div className="intro-section">
+                <h2> Start building your own list of tutorials</h2>
+                <h3>
+                  {" "}
+                  after you{" "}
+                  <span>
+                    <Link to="/register">
+                      <button>Create</button>
+                    </Link>
+                  </span>{" "}
+                  an account
+                </h3>
+              </div>
+            </div>
+          </section>
         </main>
       )}
 
