@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 8% 0 8%;
+  padding: 0.5rem 8% 0.5rem 8%;
 
   a {
     @include menu-btns($color: var(--navcolor));
@@ -14,8 +14,11 @@
     }
   }
   .links {
+    font-weight: 500;
+    color: var(--h1color);
     :hover {
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 0.999rem;
       color: #3a3d40;
     }
   }
@@ -25,6 +28,7 @@
     align-items: center;
     box-shadow: none;
     padding-left: 2rem;
+    font-weight: 500;
   }
 
   button {

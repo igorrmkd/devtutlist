@@ -16,24 +16,45 @@ body {
     // padding-right: 0.5;
 
     .hero-section {
-      height: calc(56vh - var(--nav-logo-hight));
-      // background-image: url("../../img/hero-img.png");
+      height: calc(100vh - var(--nav-logo-hight));
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
 
-      .hero {
-        // padding-top: 3vh;
+      .hero-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        flex: 1 0 30%;
+        padding-bottom: 3rem;
+        .hero {
+          height: 22rem;
+          padding: 0rem 1rem 0rem 1rem;
+          margin: 0 2rem 0 2rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
 
-        .main-title {
-          font-size: 1.5rem;
+          .main-title {
+            font-size: 2.1rem;
+          }
+          .intro-section {
+            padding-top: 1.9rem;
+            h2 {
+              font-size: 2.1rem;
+              color: var(--navcolor);
+            }
+            .button-arrow {
+              margin-top: 2rem;
+            }
+          }
         }
-        .intro-section {
-          padding-top: 2rem;
-          color: var(--h1color);
-          // font-size: 1.2rem;
-          height: 20vh;
+        .learn {
+          height: 20rem;
+          margin: 0 2rem 3rem 1rem;
         }
       }
     }
@@ -59,9 +80,6 @@ body {
   }
   .myTutorials {
     @include tutsort();
-    // :hover {
-    //   box-shadow: 1px 1px 10px 5px var(--shadow-tut);
-    // }
   }
 
   button.edit {

@@ -4,6 +4,8 @@ import Tutorial from "./Tutorial";
 import TutorialEditor from "./TutorialEditor";
 import UserContext from "../../context/UserContext";
 import { Link } from "react-router-dom";
+import learn from "../../img/learn.png";
+import button from "../../img/button.png";
 import "./Home.scss";
 import "./Modal.scss";
 
@@ -53,25 +55,20 @@ const Home = () => {
       {!user && (
         <main className="main">
           <section className="hero-section">
-            <div className="hero">
-              <div className="main-title">
-                <h1>The Best WebDev Tutorials</h1>
-                <h2>for beginners</h2>
-              </div>
+            <div className="hero-wrap">
+              <div className="hero">
+                <div className="main-title">
+                  <h1>The Best WebDev Tutorials</h1>
+                  <h2>for beginners</h2>
+                </div>
 
-              <div className="intro-section">
-                <h2> Start building your own list of tutorials</h2>
-                <h3>
-                  {" "}
-                  after you{" "}
-                  <span>
-                    <Link to="/register">
-                      <button>Create</button>
-                    </Link>
-                  </span>{" "}
-                  an account
-                </h3>
+                <div className="intro-section">
+                  <h2>Scroll down to check some of the</h2>
+                  <h2>best tutorials online</h2>
+                  <img src={button} className="button-arrow" alt="arrow"></img>
+                </div>
               </div>
+              <img src={learn} className="learn" alt="direction"></img>
             </div>
           </section>
         </main>
