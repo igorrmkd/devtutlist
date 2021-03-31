@@ -3,7 +3,6 @@ import Axios from "axios";
 import Tutorial from "./Tutorial";
 import TutorialEditor from "./TutorialEditor";
 import UserContext from "../../context/UserContext";
-import { Link } from "react-router-dom";
 import learn from "../../img/learn.png";
 import button from "../../img/button.png";
 import "./Home.scss";
@@ -51,7 +50,13 @@ const Home = () => {
   }
 
   const myRef = useRef(null);
-  const executeScroll = () => myRef.current.scrollIntoView();
+  const executeScroll = () => {
+    setTimeout(() => {
+      myRef.current.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 100);
+  };
 
   return (
     <div className="home">
