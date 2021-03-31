@@ -22,6 +22,7 @@ const Navbar = () => {
       <div className="links">
         {user === null ? (
           <>
+            <a href="mailto:igorrmkd@outlook.com">Contact</a>
             <Link to="/login">Log in</Link>
             <Link to="/register">Register</Link>
           </>

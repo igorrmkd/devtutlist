@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useRef } from "react";
 import Axios from "axios";
 import Tutorial from "./Tutorial";
 import TutorialEditor from "./TutorialEditor";
@@ -50,6 +50,9 @@ const Home = () => {
     });
   }
 
+  const myRef = useRef(null);
+  const executeScroll = () => myRef.current.scrollIntoView();
+
   return (
     <div className="home">
       {!user && (
@@ -65,7 +68,12 @@ const Home = () => {
                 <div className="intro-section">
                   <h2>Scroll down to check some of the</h2>
                   <h2>best tutorials online</h2>
-                  <img src={button} className="button-arrow" alt="arrow"></img>
+                  <img
+                    src={button}
+                    onClick={executeScroll}
+                    className="button-arrow"
+                    alt="arrow"
+                  ></img>
                 </div>
               </div>
               <img src={learn} className="learn" alt="direction"></img>
@@ -95,7 +103,9 @@ const Home = () => {
         </div>
       )}
       {tutorials.length > 0 && (
-        <div className="myTutorials">{renderTutorials()}</div>
+        <div ref={myRef} className="myTutorials">
+          {renderTutorials()}
+        </div>
       )}
     </div>
   );

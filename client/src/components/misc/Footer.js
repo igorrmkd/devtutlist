@@ -3,7 +3,7 @@ const Footer = () => {
   let date = new Date().getFullYear();
   return (
     <div className="footer">
-      <p>&copy; WebDev.Club {date}</p>
+      <p>&copy; WebDev.Club {date}. All rights reserved.</p>
     </div>
   );
 };
