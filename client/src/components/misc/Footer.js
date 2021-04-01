@@ -9,7 +9,7 @@ const Footer = props => {
 
   return (
     <div className="footer">
-      <p>&copy; WebDev.Club {date}. All rights reserved.</p>
+      <p>&copy; WebDev.Club {date}</p>
     </div>
   );
 };

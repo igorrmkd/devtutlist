@@ -5,6 +5,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 8% 0.5rem 8%;
+  @media only screen and (max-width: 600px) {
+    justify-content: space-around;
+    padding: 0.5rem 1% 0.5rem 1%;
+  }
 
   a {
     @include menu-btns($color: var(--navcolor));
@@ -13,6 +17,7 @@
       color: #3a3d40;
     }
   }
+
   .links {
     font-weight: 500;
     color: var(--h1color);
@@ -20,6 +25,11 @@
       font-weight: 600;
       font-size: 0.999rem;
       color: #3a3d40;
+    }
+    @media only screen and (max-width: 600px) {
+      a:last-child {
+        margin-right: 0rem;
+      }
     }
   }
 
@@ -29,6 +39,9 @@
     box-shadow: none;
     padding-left: 2rem;
     font-weight: 500;
+    @media only screen and (max-width: 600px) {
+      display: none;
+    }
   }
 
   button {

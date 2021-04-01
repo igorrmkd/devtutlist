@@ -1,9 +1,22 @@
 @mixin tutorials() {
   img {
-    width: 400px;
-    height: 266px;
+    width: 25rem;
+    height: 16.625rem;
     margin: 1rem 1rem 1rem 1rem;
     object-fit: cover;
+    @media screen and (max-width: 1200px) {
+      width: 21.25rem;
+      height: 14.13125rem;
+    }
+    @media screen and (max-width: 768px) {
+      width: 25rem;
+      height: 16.625rem;
+    }
+
+    @media only screen and (max-width: 600px) {
+      width: 20rem;
+      height: 13.3rem;
+    }
   }
   text-align: center;
   margin: 1rem 1rem 1rem 1rem;
@@ -23,6 +36,9 @@
 
 @mixin tutsort {
   padding: 0rem 3rem 1rem 3rem;
+  @media only screen and (max-width: 600px) {
+    padding: 0rem 0.5rem 0.5rem 0.5rem;
+  }
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
