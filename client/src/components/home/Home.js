@@ -5,6 +5,7 @@ import TutorialEditor from "./TutorialEditor";
 import UserContext from "../../context/UserContext";
 import learn from "../../img/learn.png";
 import button from "../../img/button.png";
+import ScrollToTop from "./ScrollToTop";
 import "./Home.scss";
 import "./Modal.scss";
 
@@ -112,6 +113,7 @@ const Home = () => {
           {renderTutorials()}
         </div>
       )}
+      <ScrollToTop />
     </div>
   );
 };
