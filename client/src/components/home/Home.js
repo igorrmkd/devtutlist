@@ -52,11 +52,9 @@ const Home = () => {
 
   const myRef = useRef(null);
   const executeScroll = () => {
-    setTimeout(() => {
-      myRef.current.scrollIntoView({
-        behavior: "smooth",
-      });
-    }, 100);
+    myRef.current.scrollIntoView({
+      behavior: "smooth",
+    });
   };
 
   return (
