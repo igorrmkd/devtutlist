@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useContext } from "react";
+import domain from "../../util/domain";
 import userContext from "../../context/UserContext";
 import { Link, useHistory } from "react-router-dom";
 import ErrorMessage from "../misc/ErrorMessage";
@@ -23,7 +24,7 @@ const Login = () => {
     };
 
     try {
-      await axios.post("http://localhost:5000/auth/login", loginData);
+      await axios.post(`${domain}/auth/login`, loginData);
     } catch (err) {
       if (err.response) {
         if (err.response.data.errorMessage) {

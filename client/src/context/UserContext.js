@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
+import domain from "../util/domain";
 
 const UserContext = createContext();
 
@@ -7,7 +8,7 @@ function UserContextProvider(props) {
   const [user, setUser] = useState(undefined);
 
   async function getUser() {
-    const userRes = await axios.get("http://localhost:5000/auth/loggedin/");
+    const userRes = await axios.get(`${domain}/auth/loggedin/`);
     setUser(userRes.data);
   }
 

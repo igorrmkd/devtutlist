@@ -1,3 +1,4 @@
+import domain from "../../util/domain";
 import axios from "axios";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
@@ -8,7 +9,7 @@ const Navbar = () => {
   const { user, getUser } = useContext(UserContext);
 
   async function logout() {
-    await axios.get("http://localhost:5000/auth/logout");
+    await axios.get(`${domain}/auth/logout`);
     await getUser();
   }
 

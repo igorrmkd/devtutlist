@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
+import domain from "../../util/domain";
 import { Link, useHistory } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import ErrorMessage from "../misc/ErrorMessage";
@@ -25,7 +26,7 @@ const Register = () => {
     };
 
     try {
-      await axios.post("http://localhost:5000/auth/", registerData);
+      await axios.post(`${domain}/auth/`, registerData);
     } catch (err) {
       if (err.response) {
         if (err.response.data.errorMessage) {

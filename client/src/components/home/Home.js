@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext, useRef } from "react";
+import domain from "../../util/domain";
 import Axios from "axios";
 import Tutorial from "./Tutorial";
 import TutorialEditor from "./TutorialEditor";
@@ -21,7 +22,7 @@ const Home = () => {
   }, []);
 
   async function getTutorials() {
-    const tutorialsRes = await Axios.get("http://localhost:5000/tutorial/");
+    const tutorialsRes = await Axios.get(`${domain}/tutorial/`);
     setTutorials(tutorialsRes.data);
   }
 

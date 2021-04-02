@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import "./TutorialEditor.scss";
+import domain from "../../util/domain";
 import "../../style/forms.scss";
 import Axios from "axios";
 import ErrorMessage from "../misc/ErrorMessage";
@@ -41,11 +41,11 @@ function TutorialEditor({
     try {
       if (!editTutorialData)
         // if you are not getting editData (not editing..) post as a new tut
-        await Axios.post("http://localhost:5000/tutorial/", tutorialData);
+        await Axios.post(`${domain}:5000/tutorial/`, tutorialData);
       // if you are reciving editdata (you are editing), just update the data
       else
         await Axios.put(
-          `http://localhost:5000/tutorial/${editTutorialData._id}`,
+          `${domain}/tutorial/${editTutorialData._id}`,
           tutorialData
         );
     } catch (err) {

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import domain from "../../util/domain";
 import UserContext from "../../context/UserContext";
 import Axios from "axios";
 import defaultTutorial from "../../img/defaultTutorial.jpg";
@@ -12,7 +13,7 @@ function Tutorial({ tutorial, getTutorials, editTutorial }) {
 
   async function deleteTutorial() {
     if (window.confirm("Do you want to delete the content form the list?")) {
-      await Axios.delete(`http://localhost:5000/tutorial/${tutorial._id}`);
+      await Axios.delete(`${domain}/tutorial/${tutorial._id}`);
       getTutorials();
     }
   }
