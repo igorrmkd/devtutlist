@@ -51,7 +51,19 @@ router.post("/", async (req, res) => {
     const token = jwt.sign({ id: savedUser._id }, process.env.JWT_SECRET);
 
     //set up a cookie in the request, and send the cookie(readable only httpOnly)
-    res.cookie("token", token, { httpOnly: true }).send();
+    res
+      .cookie("token", token, {
+        httpOnly: true,
+        sameSite:
+          process.env.NODE_ENV === "development"
+            ? "lax"
+            : process.env.NODE_ENV === "production" && "none",
+        secure:
+          process.env.NODE_ENV === "development"
+            ? false
+            : process.env.NODE_ENV === "production" && true,
+      })
+      .send();
     //
   } catch (err) {
     res.status(500).send();
@@ -90,7 +102,19 @@ router.post("/login", async (req, res) => {
     const token = jwt.sign({ id: existingUser._id }, process.env.JWT_SECRET);
 
     //set up a cookie in the request, and send the cookie(readable only httpOnly)
-    res.cookie("token", token, { httpOnly: true }).send();
+    res
+      .cookie("token", token, {
+        httpOnly: true,
+        sameSite:
+          process.env.NODE_ENV === "development"
+            ? "lax"
+            : process.env.NODE_ENV === "production" && "none",
+        secure:
+          process.env.NODE_ENV === "development"
+            ? false
+            : process.env.NODE_ENV === "production" && true,
+      })
+      .send();
     //
   } catch (err) {
     res.status(500).send();
@@ -112,10 +136,22 @@ router.get("/loggedIn", (req, res) => {
   }
 });
 
-router.get("/logout", (req, res) => {
+router.get("/logOut", (req, res) => {
   try {
-    res.clearCookie("token").send();
-    //
+    res
+      .cookie("token", "", {
+        httpOnly: true,
+        sameSite:
+          process.env.NODE_ENV === "development"
+            ? "lax"
+            : process.env.NODE_ENV === "production" && "none",
+        secure:
+          process.env.NODE_ENV === "development"
+            ? false
+            : process.env.NODE_ENV === "production" && true,
+        expires: new Date(0),
+      })
+      .send();
   } catch (err) {
     return res.json(null);
   }
