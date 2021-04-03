@@ -15,7 +15,8 @@
 
     @media only screen and (max-width: 600px) {
       width: 20rem;
-      height: 13.3rem;
+      max-width: 80vw;
+      // height: 13.3rem;
     }
   }
   text-align: center;
@@ -61,11 +62,13 @@
   margin-top: $margin;
   border: none;
   font-size: 1.1rem;
+  color: #494d50;
   border-radius: 5px;
+  font-weight: 500;
   padding: 0.4rem 0.8rem;
-  // box-shadow: 1px 1px 10px 1px var(--shadow-tut); // normal
-  // box-shadow: 1px 1px 10px 5px var(--shadow-tut); // hover
-  // box-shadow: 1px 1px 3px 5px var(--shadow-tut-dark); // clicked
+  :hover {
+    color: #3a3d40;
+  }
 }
 @mixin menu-btns($color) {
   background-color: $color;

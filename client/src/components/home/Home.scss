@@ -51,7 +51,8 @@ body {
               // font-size: 1.1rem;
             }
             @media screen and (max-width: 600px) {
-              font-size: 1.2rem;
+              font-size: 1rem;
+              padding: 0 0.3rem 0 0.3rem;
             }
           }
           .intro-section {
@@ -64,7 +65,8 @@ body {
                 font-size: 1.7rem;
               }
               @media screen and (max-width: 600px) {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+                padding: 0 0.3rem 0 0.3rem;
               }
             }
             .button-arrow {
@@ -72,6 +74,12 @@ body {
               cursor: pointer;
               &:hover {
                 filter: brightness(90%) saturate(120%);
+              }
+              @media screen and (max-width: 1200px) {
+                width: 190px;
+              }
+              @media screen and (max-width: 600px) {
+                width: 150px;
               }
             }
           }
@@ -132,8 +140,7 @@ body {
     box-shadow: var(--shadow-normal);
     &:hover {
       box-shadow: var(--shadow-hover);
-      font-weight: 500;
-      font-size: 1.09rem;
+      font-size: 1.1rem;
       background-color: var(--add-button);
     }
     &:active {
@@ -141,15 +148,3 @@ body {
     }
   }
 }
-
-// @media screen and (max-width: 1200px) {
-//   body {
-//     background-color: rgb(201, 166, 154);
-//   }
-// }
-
-// @media only screen and (max-width: 600px) {
-//   body {
-//     background-color: rgb(132, 161, 132);
-//   }
-// }

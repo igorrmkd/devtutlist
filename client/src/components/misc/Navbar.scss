@@ -21,14 +21,24 @@
   .links {
     font-weight: 500;
     color: var(--h1color);
+    button {
+      color: var(--h1color);
+    }
     :hover {
       font-weight: 600;
       font-size: 0.999rem;
       color: #3a3d40;
+      button {
+        color: var(--h1color);
+        font-weight: 600;
+        font-size: 0.999rem;
+        color: #3a3d40;
+      }
     }
     @media only screen and (max-width: 600px) {
       a {
         margin-right: 0.8rem;
+        font-size: 0.9rem;
       }
       a:last-child {
         margin-right: 0.4rem;
