@@ -27,8 +27,11 @@
       color: #3a3d40;
     }
     @media only screen and (max-width: 600px) {
+      a {
+        margin-right: 0.8rem;
+      }
       a:last-child {
-        margin-right: 0rem;
+        margin-right: 0.4rem;
       }
     }
   }
@@ -41,6 +44,22 @@
     font-weight: 500;
     @media only screen and (max-width: 600px) {
       display: none;
+    }
+  }
+
+  .small-logo {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    box-shadow: none;
+    display: none;
+    @media only screen and (max-width: 600px) {
+      display: contents;
+      h3 {
+        font-size: 1rem;
+        padding-left: 0.5rem;
+        font-weight: 600;
+      }
     }
   }
 

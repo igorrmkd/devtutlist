@@ -20,10 +20,14 @@ const Navbar = () => {
           <h2>WebDev.Club</h2>
         </Link>
       </div>
+      <div className="small-logo">
+        <Link to="/">
+          <h3>WebDev.Club</h3>
+        </Link>
+      </div>
       <div className="links">
         {user === null ? (
           <>
-            <a href="mailto:igorrmkd@outlook.com">Contact</a>
             <Link to="/login">Log in</Link>
             <Link to="/register">Register</Link>
           </>
