@@ -36,15 +36,16 @@
   }
   @media only screen and (max-width: 600px) {
     h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
+      max-width: 350px;
+      word-wrap: break-word;
+      font-size: 1rem;
     }
     p {
+      max-width: 350px;
+      word-wrap: break-word;
       font-size: 0.9rem;
-      font-weight: 500;
     }
   }
-
   border-radius: 5px;
 }
 
