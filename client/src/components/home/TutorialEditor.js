@@ -100,7 +100,7 @@ function TutorialEditor({
               Title <span>(max 38 chars)</span>
             </label>
             <input
-              maxlength="38"
+              maxLength="38"
               id="tutorial-name"
               type="text"
               value={tutName}
@@ -110,7 +110,7 @@ function TutorialEditor({
               Short Description <span>(max 50 chars)</span>
             </label>
             <textarea
-              maxlength="50"
+              maxLength="50"
               id="description"
               value={description}
               rows="3"
