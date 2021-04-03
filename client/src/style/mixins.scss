@@ -31,7 +31,18 @@
     font-size: 0.9rem;
     font-weight: 500;
   }
-  //
+  @media only screen and (max-width: 600px) {
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    p {
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 0.1rem 1rem 1.585rem 1rem;
+    }
+  }
+
   border-radius: 5px;
 }
 
