@@ -104,6 +104,10 @@
       font-size: 1rem;
       font-weight: 500;
       color: var(--pcolor);
+      @media screen and (max-width: 600px) {
+        width: 80vw;
+        max-width: 25rem;
+      }
       label {
         span {
           color: var(--delete-btn);
