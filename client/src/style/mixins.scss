@@ -4,10 +4,6 @@
     height: 16.625rem;
     margin: 1rem 1rem 1rem 1rem;
     object-fit: cover;
-    @media screen and (max-width: 1200px) {
-      width: 21.25rem;
-      height: 14.13125rem;
-    }
     @media screen and (max-width: 768px) {
       width: 25rem;
       height: 16.625rem;
@@ -16,20 +12,27 @@
     @media only screen and (max-width: 600px) {
       width: 20rem;
       max-width: 80vw;
-      // height: 13.3rem;
     }
   }
   text-align: center;
   margin: 1rem 1rem 1rem 1rem;
   background-color: var(--tut-frame);
 
-  h2 {
-    font-size: 0.9rem;
-    font-weight: 500;
-  }
-  p {
-    font-size: 0.9rem;
-    font-weight: 500;
+  .tutTextInput {
+    display: flex;
+    flex-direction: column;
+    h2 {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    p {
+      font-size: 1rem;
+      font-weight: 500;
+    }
   }
   @media only screen and (max-width: 600px) {
     h3 {
@@ -39,7 +42,6 @@
     p {
       font-size: 0.9rem;
       font-weight: 500;
-      padding: 0.1rem 1rem 1.585rem 1rem;
     }
   }
 
@@ -57,10 +59,21 @@
   flex: 1 0 21%;
 }
 
-@mixin editDelBtn($margin, $color) {
-  transform: translateY(-6rem);
-  float: left;
-  margin-left: $margin;
+@mixin editDelBtn($color) {
+  transform: translate(-9rem, -3.1rem);
+  // @media screen and (max-width: 1200px) {
+  //   transform: translate(-9rem, -3.1rem);
+  // }
+  @media screen and (max-width: 768px) {
+    transform: translate(-9rem, -3.1rem);
+  }
+  @media screen and (max-width: 600px) {
+    transform: translate(-6.5rem, -3.1rem);
+  }
+  @media screen and (max-width: 388px) {
+    transform: translate(0, -3.1rem);
+  }
+  // margin-left: 1.4rem;
   background-color: $color;
   border: none;
   border-radius: 5px;

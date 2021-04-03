@@ -11,6 +11,10 @@ body {
   justify-content: center;
   padding-right: 0.5;
 
+  .addtut {
+    margin-left: 0.8rem;
+  }
+
   .main {
     text-align: center;
     // padding-right: 0.5;
@@ -87,7 +91,7 @@ body {
         .learn {
           height: 20rem;
           margin: 0 2rem 3rem 1rem;
-          @media screen and (max-width: 1200px) {
+          @media screen and (max-width: 1400px) {
             display: none;
           }
         }
@@ -118,7 +122,11 @@ body {
   }
 
   button.edit {
-    @include editDelBtn($margin: 1.5rem, $color: var(--edit-button));
+    @include editDelBtn($color: var(--edit-button));
+    margin-left: 1.4rem;
+    @media screen and (max-width: 388px) {
+      margin-left: 0rem;
+    }
     &:hover {
       font-weight: 500;
       padding-right: 0.48rem;
@@ -126,7 +134,8 @@ body {
     }
   }
   button.delete {
-    @include editDelBtn($margin: 0.5rem, $color: var(--delete-btn));
+    @include editDelBtn($color: var(--delete-btn));
+    margin-left: 0.5rem;
     &:hover {
       font-weight: 500;
       padding-left: 0.48rem;
@@ -147,4 +156,14 @@ body {
       box-shadow: var(--shadow-active);
     }
   }
+
+  // @media screen and (max-width: 1200px) {
+  //   background-color: rgb(107, 209, 116);
+  // }
+  // @media screen and (max-width: 768px) {
+  //   background-color: teal;
+  // }
+  // @media screen and (max-width: 600px) {
+  //   background-color: rgb(255, 81, 0);
+  // }
 }

@@ -8,14 +8,14 @@
   color: var(--pcolor);
 }
 
-.mytutorial:hover {
-  // box-shadow: var(--shadow-hover);
-}
 .mytutorial:active {
   box-shadow: var(--shadow-active);
 }
 
 .p-padding-for-visitors {
+  padding-bottom: 1.585rem;
+}
+.p-for-users {
   padding-bottom: 1.585rem;
 }
 
@@ -27,4 +27,7 @@
       // transform: scale(1.01);
     }
   }
+}
+div .buttons {
+  height: 0;
 }

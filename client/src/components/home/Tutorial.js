@@ -31,11 +31,7 @@ function Tutorial({ tutorial, getTutorials, editTutorial }) {
       >
         {tutorial.img ? newImg : defaultimg}
       </a>
-      {tutorial.title && <h3>{tutorial.title}</h3>}
-      {tutorial.description && (
-        <p className={showBtns}>{tutorial.description}</p>
-      )}
-      <section className="buttons">
+      <div className="buttons">
         {user === tutorial.user && (
           <button className="edit" onClick={() => editTutorial(tutorial)}>
             Edit
@@ -46,7 +42,13 @@ function Tutorial({ tutorial, getTutorials, editTutorial }) {
             Delete
           </button>
         )}
-      </section>
+      </div>
+      <div className="tutTextInput">
+        {tutorial.title && <h3>{tutorial.title}</h3>}
+        {tutorial.description && (
+          <p className={showBtns}>{tutorial.description}</p>
+        )}
+      </div>
     </div>
   );
 }
