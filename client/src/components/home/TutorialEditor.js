@@ -41,7 +41,7 @@ function TutorialEditor({
     try {
       if (!editTutorialData)
         // if you are not getting editData (not editing..) post as a new tut
-        await Axios.post(`${domain}:5000/tutorial/`, tutorialData);
+        await Axios.post(`${domain}/tutorial/`, tutorialData);
       // if you are reciving editdata (you are editing), just update the data
       else
         await Axios.put(
